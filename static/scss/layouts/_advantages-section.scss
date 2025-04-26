@@ -1,0 +1,70 @@
+.advantages {
+    background-image: url(/static/images/desk/advantages.png);
+    padding-top: 60px;
+    padding-bottom: 331px;
+    background-position: center bottom 33px;
+    background-size: 290px 282px;
+    background-repeat: no-repeat;
+    @media screen and (min-width: $bp-tablet) {
+        padding-top: 80px;
+        padding-bottom: 43px;
+        background-size: 298px 290px;
+        background-position: top 60px left calc((100vw - 768px) / 2 + 53px);
+    }
+
+    @media screen and (min-width: $bp-desktop) {
+        padding-top: 133px;
+        padding-bottom: 168px;
+        background-size: 577px 561px;
+        background-position: top 46px left calc((100vw - 1280px) / 2);
+    }
+
+    &__block {
+        @media screen and (min-width: $bp-tablet) {
+            width: 322px;
+            margin-left: auto;
+        }
+
+        @media screen and (min-width: $bp-desktop) {
+            width: 586px;
+        }
+    }
+
+    &__title {
+        margin-bottom: 16px;
+        text-align: left;
+        @media screen and (min-width: $bp-tablet) {
+            margin-bottom: 12px;
+        }
+
+        @media screen and (min-width: $bp-desktop) {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__sub-title {
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 12px;
+        @media screen and (min-width: $bp-tablet) {
+            font-size: 16px;
+        }
+
+        @media screen and (min-width: $bp-desktop) {
+            font-size: 24px;
+        }
+    }
+
+    &__note {
+        font-size: 14px;
+        font-weight: 400;
+        @media screen and (min-width: $bp-tablet) {
+            font-size: 16px;
+        }
+
+        @media screen and (min-width: $bp-desktop) {
+            font-size: 20px;
+            width: 566px;
+        }
+    }
+}

@@ -1,0 +1,142 @@
+.conclusion {
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: 66px;
+        left: -100px;
+        width: 198px;
+        height: 198px;
+        border-radius: 198px;
+        filter: blur(60px);
+        background-color: var(--color-secondary-yellow);
+        z-index: -1;
+        @media screen and (min-width: $bp-tablet) {
+            bottom: -119px;
+            left: -122px;
+            width: 344px;
+            height: 344px;
+            border-radius: 344px;
+            filter: blur(105px);
+        }
+
+        @media screen and (min-width: $bp-desktop) {
+            bottom: -82px;
+            left: -76px;
+            width: 427px;
+            height: 427px;
+            border-radius: 427px;
+            filter: blur(182px);
+        }
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 66px;
+        right: -98px;
+        width: 198px;
+        height: 198px;
+        border-radius: 198px;
+        filter: blur(145px);
+        background-color: var(--color-brand-normal);
+        z-index: -1;
+        @media screen and (min-width: $bp-tablet) {
+            bottom: -96px;
+            right: -74px;
+            width: 309px;
+            height: 309px;
+            border-radius: 309px;
+            filter: blur(132px);
+        }
+
+        @media screen and (min-width: $bp-desktop) {
+            bottom: -52px;
+            right: -98px;
+            width: 476px;
+            height: 476px;
+            border-radius: 476px;
+            filter: blur(145px);
+        }
+    }
+
+    &__container {
+        padding-top: 35px;
+        padding-bottom: 54px;
+        @media screen and (min-width: $bp-tablet) {
+            padding-top: 40px;
+            padding-bottom: 55px;
+        }
+
+        @media screen and (min-width: $bp-desktop) {
+            padding-top: 0;
+            padding-bottom: 80px;
+        }
+    }
+
+    &__title {
+        font-size: 16px;
+        margin-bottom: 100px;
+        line-height: 1.2;
+        font-weight: 600;
+        text-align: center;
+        @media screen and (min-width: $bp-tablet) {
+            font-size: 20px;
+            margin-bottom: 110px;
+        }
+
+        @media screen and (min-width: $bp-desktop) {
+            font-size: 32px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 116px;
+            width: 1030px;
+        }
+    }
+
+    .free-lesson-block {
+        margin-bottom: 0;
+        &::before {
+            width: 40px;
+            height: 49px;
+            top: 16px;
+            left: 14px;
+            background-image: url(/static/images/learning/desk/walk-left.webp);
+            @media screen and (min-width: $bp-tablet) {
+                width: 71px;
+                height: 88px;
+                top: 44px;
+                left: 32px;
+            }
+
+            @media screen and (min-width: $bp-desktop) {
+                width: 141px;
+                height: 173px;
+                top: 82px;
+                left: 42px;
+            }
+        }
+
+        &::after {
+            width: 39px;
+            height: 49px;
+            top: 16px;
+            right: 16px;
+            background-image: url(/static/images/learning/desk/walk-right.webp);
+            @media screen and (min-width: $bp-tablet) {
+                width: 69px;
+                height: 88px;
+                top: 44px;
+                right: 29px;
+            }
+
+            @media screen and (min-width: $bp-desktop) {
+                width: 136px;
+                height: 173px;
+                top: 82px;
+                right: 44px;
+            }
+        }
+    }
+}

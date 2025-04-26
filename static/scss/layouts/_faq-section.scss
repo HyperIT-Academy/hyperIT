@@ -1,0 +1,131 @@
+.faq {
+    position: relative;
+
+    &::before {
+        top: -8px;
+        left: -173px;
+        width: 476px;
+        height: 476px;
+        border-radius: 476px;
+        filter: blur(145px);
+        background-color: var(--color-brand-normal);
+        @media screen and (min-width: $bp-desktop) {
+            content: "";
+            position: absolute;
+            z-index: -1;
+        }
+    }
+
+    &::after {
+        bottom: 130px;
+        right: -76px;
+        width: 500px;
+        height: 500px;
+        border-radius: 500px;
+        filter: blur(182px);
+        background-color: var(--color-secondary-yellow);
+        @media screen and (min-width: $bp-desktop) {
+            content: "";
+            position: absolute;
+            z-index: -1;
+        }
+    }
+
+    &__title {
+        margin-bottom: 16px;
+        @media screen and (min-width: $bp-tablet) {
+            margin-bottom: 18px;
+        }
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        row-gap: 10px;
+        @media screen and (min-width: $bp-tablet) {
+            row-gap: 12px;
+        }
+
+        @media screen and (min-width: $bp-desktop) {
+            row-gap: 16px;
+        }
+    }
+
+    &__item {
+        position: relative;
+        padding: 32px 16px;
+        border-radius: 12px;
+        --tw-shadow: 0px 2px 11px 0px rgba(0, 0, 0, 0.16);
+        --tw-shadow-colored: 0px 2px 11px 0px var(--tw-shadow-color);
+        box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+        background-color: var(--color-primary-light);
+        @media screen and (min-width: $bp-tablet) {
+            border-radius: 20px;
+            padding: 40px 32px;
+        }
+
+        @media screen and (min-width: $bp-desktop) {
+            padding: 52px 60px;
+        }
+    }
+
+    &__question {
+        font-size: 16px;
+        line-height: 1.2;
+        font-weight: 600;
+        max-width: 90%;
+        @media screen and (min-width: $bp-tablet) {
+            font-size: 20px;
+        }
+
+        @media screen and (min-width: $bp-desktop) {
+            font-size: 32px;
+        }
+    }
+
+    &__answer {
+        font-size: 16px;
+        margin-top: 16px;
+        font-weight: 400;
+        @media screen and (min-width: $bp-tablet) {
+            margin-top: 20px;
+        }
+
+        @media screen and (min-width: $bp-desktop) {
+            font-size: 20px;
+            margin-top: 34px;
+        }
+    }
+
+    &__plus-button {
+        width: 32px;
+        height: 32px;
+        position: absolute;
+        top: 32px;
+        right: 16px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 14px 14px;
+        background-image: url(/static/images/faq/plus.svg);
+        border-radius: 24px;
+        background-color: var(--color-brand-normal);
+        border: 1px solid var(--color-brand-normal);
+        transition: all 0.3s;
+        @media screen and (min-width: $bp-tablet) {
+            right: 32px;
+            height: 40px;
+            width: 40px;
+        }
+
+        @media screen and (min-width: $bp-desktop) {
+            right: 60px;
+            top: 47px;
+            height: 48px;
+            width: 48px;
+        }
+
+        &.rotate {
+            transform: rotate(45deg);
+        }
+    }
+}

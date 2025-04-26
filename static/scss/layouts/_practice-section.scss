@@ -1,0 +1,177 @@
+.practice {
+    &__title {
+        @media screen and (min-width: $bp-tablet) {
+            margin: 0 auto 20px;
+            width: 576px;
+        }
+
+        @media screen and (min-width: $bp-desktop) {
+            width: 902px;
+        }
+    }
+
+    .practice-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        @media screen and (min-width: $bp-tablet) {
+            gap: 20px;
+        }
+
+        @media screen and (min-width: $bp-desktop) {
+            gap: 106px;
+        }
+
+        &__item {
+            position: relative;
+            padding-top: 140px;
+            @media screen and (min-width: $bp-tablet) {
+                padding-top: 220px;
+            }
+
+            @media screen and (min-width: $bp-desktop) {
+                padding-top: 300px;
+            }
+
+            &::before {
+                display: block;
+                position: absolute;
+                content: "";
+                width: 150px;
+                height: 140px;
+                left: 50%;
+                top: 0;
+                transform: translateX(-50%);
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+                @media screen and (min-width: $bp-tablet) {
+                    width: 222px;
+                    height: 200px;
+                }
+    
+                @media screen and (min-width: $bp-desktop) {
+                    width: 330px;
+                    height: 290px;
+                }
+            }
+
+            &:first-child {
+                &::before {
+                    background-image: url(/static/images/desk/practice/boy-sad.webp);
+                }
+
+                .enumeration__item {
+                    &:nth-child(2n+1) {
+                        @media screen and (min-width: $bp-desktop) {
+                            margin-left: auto;
+                        }
+                    }
+
+                    &::after {
+                        background-color: var(--color-secondary-grey-dark);
+                    }
+                }
+            }
+
+            &:nth-child(2) {
+                &::before {
+                    background-image: url(/static/images/desk/practice/boy-smile.jpg);
+                }
+
+                .enumeration__item {
+                    &:nth-child(2n) {
+                        @media screen and (min-width: $bp-desktop) {
+                            margin-left: auto;
+                        }
+                    }
+
+                    &::after {
+                        background-color: var(--color-brand-normal);
+                    }
+                }
+            }
+        }
+
+        &__title {
+            font-size: 14px;
+            font-weight: 600;
+            text-align: center;
+            margin: 0 auto 12px;
+            @media screen and (min-width: $bp-tablet) {
+                margin: 0 auto 23px;
+                width: 203px;
+                font-size: 16px;
+            }
+
+            @media screen and (min-width: $bp-desktop) {
+                margin: 0 auto 28px;
+                width: 363px;
+                font-size: 32px;
+            }
+        }
+
+        .enumeration {
+            font-size: 10px;
+            @media screen and (min-width: $bp-tablet) {
+                font-size: 12px;
+            }
+
+            @media screen and (min-width: $bp-desktop) {
+                font-size: 16px;
+            }
+
+            &__item {
+                position: relative;
+                padding: 10px 10px 10px 15px;
+                min-height: 106px;
+                margin-bottom: 15px;
+                border-radius: 6px;
+                box-shadow: 0 1.90625px 10.484375px 0 rgba(0, 0, 0, .16);
+                background-color: var(--color-primary-light);
+                font-weight: 400;
+                @media screen and (min-width: $bp-tablet) {
+                    padding: 15px 20px;
+                    margin-bottom: 27px;
+                    border-radius: 10px;
+                    box-shadow: .6537798047px 3.2688989639px 16.9982738495px 0 rgba(0, 0, 0, .16);
+                }
+
+                @media screen and (min-width: $bp-desktop) {
+                    padding: 20px 30px;
+                    margin-bottom: 43px;
+                    width: 430px;
+                    border-radius: 13px;
+                    box-shadow: .8730599284px 4.3652997017px 22.6995563507px 0 rgba(0, 0, 0, .16);
+                }
+
+                &::after {
+                    display: block;
+                    position: absolute;
+                    content: "";
+                    width: 14px;
+                    height: 14px;
+                    top: -7px;
+                    right: 16px;
+                    border-radius: 50%;
+                    background-size: 12px 12px;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-image: url(/static/images/done-icon.svg);
+                    @media screen and (min-width: $bp-tablet) {
+                        width: 21px;
+                        height: 21px;
+                        background-size: 17px 17px;
+                    }
+
+                    @media screen and (min-width: $bp-desktop) {
+                        width: 29px;
+                        height: 29px;
+                        top: -10px;
+                        background-size: 25px 25px;
+                    }
+                }
+            }
+        }
+    }
+}

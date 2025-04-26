@@ -1,0 +1,332 @@
+.details {
+    &__container {
+        @media screen and (min-width: $bp-tablet) {
+            position: relative;
+        }
+
+        @media screen and (min-width: $bp-desktop) {
+            display: flex;
+        }
+    }
+
+    .free-lesson {
+        @media screen and (min-width: $bp-desktop) {
+            margin-right: 26px;
+        }
+
+        &__title {
+            @media screen and (min-width: $bp-tablet) {
+                width: 513px;
+            }
+
+            @media screen and (min-width: $bp-desktop) {
+                width: 381px;
+                text-align: left;
+                font-size: 32px;
+            }
+        }
+
+        &__title {
+            margin-bottom: 16px;
+            @media screen and (min-width: $bp-tablet) {
+                margin-bottom: 18px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            @media screen and (min-width: $bp-desktop) {
+                margin-bottom: 43px;
+                margin-left: 0;
+                margin-right: 0;
+            }
+        }
+        
+        &__text {
+            font-size: 16px;
+            text-align: center;
+            font-weight: 400;
+            @media screen and (min-width: $bp-tablet) {
+                font-size: 20px;
+            }
+
+            @media screen and (max-width: $bp-tablet) {
+                margin-bottom: 26px;
+            }
+
+            @media screen and (min-width: $bp-desktop) {
+                width: 381px;
+                text-align: left;
+                font-size: 32px;
+            }
+
+            span {
+                color: var(--color-brand-dark);
+                font-weight: 700;
+            }
+        }
+    }
+
+    &__block {
+        @media screen and (min-width: $bp-tablet) {
+            display: flex;
+            gap: 37px;
+        }
+
+        @media screen and (min-width: $bp-desktop) {
+            gap: 67px;
+        }
+    }
+
+    .details-list {
+        display: flex;
+        @media screen and (min-width: $bp-tablet) {
+            flex-direction: column;
+            gap: 35px;
+        }
+
+        @media screen and (max-width: $bp-tablet) {
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        @media screen and (min-width: $bp-desktop) {
+            gap: 40px;
+        }
+
+        &__item {
+            width: 50%;
+            @media screen and (min-width: $bp-tablet) {
+                width: 180px;
+            }
+        }
+
+        &__item-title {
+            font-size: 16px;
+            margin-bottom: 6px;
+            font-weight: 600;
+            @media screen and (min-width: $bp-tablet) {
+                margin-bottom: 4px;
+            }
+
+            @media screen and (min-width: $bp-desktop) {
+                font-size: 24px;
+                margin-bottom: 14px;
+            }
+        }
+
+        &__item-note {
+            font-size: 12px;
+            font-weight: 400;
+            @media screen and (min-width: $bp-tablet) {
+                font-size: 14px;
+            }
+
+            @media screen and (max-width: $bp-desktop) {
+                width: 124px;
+            }
+
+            @media screen and (min-width: $bp-desktop) {
+                font-size: 20px;
+            }
+
+
+        }
+    }
+
+    .details-second-list {
+        display: flex;
+        gap: 8px;
+        @media screen and (min-width: $bp-tablet) {
+            gap: 40px;
+        }
+
+        @media screen and (max-width: $bp-tablet) {
+            justify-content: space-between;
+            margin-bottom: 43px;
+        }
+
+        &__item-title {
+            font-size: 16px;
+            margin-bottom: 17px;
+            font-weight: 600;
+            @media screen and (min-width: $bp-tablet) {
+                margin-bottom: 19px;
+            }
+
+            @media screen and (min-width: $bp-desktop) {
+                margin-bottom: 27px;
+                font-size: 24px;
+            }
+        }
+
+        .internal-list {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            @media screen and (min-width: $bp-tablet) {
+                gap: 24px;
+            }
+
+            @media screen and (min-width: $bp-desktop) {
+                gap: 48px;
+            }
+
+            li {
+                p::before {
+                    content: "";
+                    position: absolute;
+                    top: -2px;
+                    left: 0;
+                    width: 32px;
+                    height: 32px;
+                    background-position: center;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    @media screen and (min-width: $bp-tablet) {
+                        width: 40px;
+                        height: 40px;
+                    }
+
+                    @media screen and (min-width: $bp-desktop) {
+                        top: 6px;
+                    }
+                }
+
+                &:first-child {
+                    p::before {
+                        background-image: url(/static/images/desk/details/test.webp);
+                    }
+                }
+
+                &:nth-child(2) {
+                    p::before {
+                        background-image: url(/static/images/desk/details/coding.webp);
+                    }
+                }
+
+                &:last-child {
+                    p::before {
+                        background-image: url(/static/images/desk/details/consultant.webp);
+                    }
+                }
+            }
+
+            &__item {
+                display: flex;
+                align-items: center;
+                position: relative;
+                font-size: 12px;
+                height: 28px;
+                padding-left: 42px;
+                font-weight: 400;
+                @media screen and (min-width: $bp-tablet) {
+                    font-size: 14px;
+                    height: 36px;
+                    padding-left: 52px;
+                }
+
+                @media screen and (min-width: $bp-desktop) {
+                    font-size: 20px;
+                    height: 52px;
+                }
+            }
+        }
+
+        .second-internal-list {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            @media screen and (min-width: $bp-tablet) {
+                gap: 24px;
+            }
+
+            @media screen and (min-width: $bp-desktop) {
+                gap: 48px;
+            }
+
+            li {
+                p::before {
+                    content: "";
+                    position: absolute;
+                    top: -2px;
+                    left: 0;
+                    width: 32px;
+                    height: 32px;
+                    background-position: center;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    @media screen and (min-width: $bp-tablet) {
+                        width: 40px;
+                        height: 40px;
+                    }
+
+                    @media screen and (min-width: $bp-desktop) {
+                        top: 6px;
+                    }
+                }
+
+                &:first-child {
+                    p::before {
+                        background-image: url(/static/images/desk/details/dimensions.webp);
+                    }
+                }
+
+                &:nth-child(2) {
+                    p::before {
+                        background-image: url(/static/images/desk/details/computer.webp);
+                    }
+                }
+
+                &:last-child {
+                    p::before {
+                        background-image: url(/static/images/desk/details/code.webp);
+                    }
+                }
+            }
+
+            &__item {
+                display: flex;
+                align-items: center;
+                position: relative;
+                font-size: 12px;
+                height: 28px;
+                padding-left: 42px;
+                font-weight: 400;
+                @media screen and (min-width: $bp-tablet) {
+                    font-size: 14px;
+                    height: 36px;
+                    padding-left: 52px;
+                }
+
+                @media screen and (min-width: $bp-desktop) {
+                    font-size: 20px;
+                    height: 52px;
+                }
+            }
+        }
+    }
+
+    &__button {
+        width: 190px;
+        height: 42px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 14px;
+        border-radius: 22px;
+        @media screen and (min-width: $bp-tablet) {
+            position: absolute;
+            bottom: 0;
+            left: 32px;
+            border-radius: 20px;
+        }
+
+        @media screen and (min-width: $bp-desktop) {
+            border-radius: 36px;
+            bottom: 12px;
+            left: 439px;
+            height: 51px;
+            width: 180px;
+            font-size: 18px;
+        }
+    }
+}

@@ -1,0 +1,88 @@
+.privacy {
+    position: relative;
+    padding-top: 60px;
+    @media screen and (min-width: $bp-tablet) {
+        padding-top: 100px;
+    }
+
+    &__title {
+        text-align: center;
+        font-size: 20px;
+        margin-bottom: 10px;
+        @media screen and (min-width: $bp-mobile) {
+            font-size: 38px;
+            margin-bottom: 25px;
+        }
+    }
+
+    &__last-changes {
+        font-size: 14px;
+        font-weight: 700;
+        @media screen and (min-width: $bp-mobile) {
+            font-size: 18px;
+        }
+    }
+
+    &__text {
+        margin-top: 10px;
+        font-size: 14px;
+        font-weight: 400;
+        margin-bottom: 10px;
+        @media screen and (min-width: $bp-mobile) {
+            margin-top: 15px;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+    }
+
+    .privacy-point {
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        @media screen and (min-width: $bp-mobile) {
+            margin-bottom: 20px;
+            gap: 8px;
+        }
+
+        &__title {
+            font-size: 18px;
+            @media screen and (min-width: $bp-mobile) {
+                font-size: 28px;
+            }
+        }
+
+        &__text {
+            font-size: 14px;
+            font-weight: 400;
+            @media screen and (min-width: $bp-mobile) {
+                font-size: 18px;
+            }
+        }
+    }
+
+    .contact-info {
+        margin-bottom: 10px;
+        @media screen and (min-width: $bp-mobile) {
+            margin-bottom: 20px;
+        }
+
+        &__title {
+            font-size: 16px;
+            @media screen and (min-width: $bp-mobile) {
+                font-size: 20px;
+            }
+        }
+
+        &__link {
+            font-size: 11px;
+            @media screen and (min-width: $bp-mobile) {
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+.bold {
+    font-weight: 700;
+}

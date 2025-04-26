@@ -1,0 +1,29 @@
+.header {
+    position: absolute;
+    left: 50%;
+    top: 22px;
+    transform: translateX(-50%);
+    z-index: 30;
+    @media screen and (min-width: $bp-mobile) {
+        left: calc((100vw - 480px) / 2 + 20px);
+        transform: translateX(0);
+    }
+
+    @media screen and (min-width: $bp-tablet) {
+        left: calc((100vw - 768px) / 2 + 32px);
+        top: 27px;
+    }
+
+    @media screen and (min-width: $bp-desktop) {
+        left: calc((100vw - 1280px) / 2 + 32px);
+    }
+
+    img {
+        width: 90px;
+        height: 32px;
+        @media screen and (min-width: $bp-tablet) {
+            width: 130px;
+            height: 48px;
+        }
+    }
+}

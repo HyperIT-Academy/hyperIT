@@ -1,0 +1,86 @@
+.lesson {
+    position: relative;
+
+    @media screen and (max-width: $bp-tablet) {
+        &::before {
+            content: "";
+            position: absolute;
+            top: -297px;
+            left: -108px;
+            width: 242px;
+            height: 242px;
+            border-radius: 242px;
+            background-color: var(--color-secondary-yellow);
+            filter: blur(93px);
+            z-index: -1;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: -99px;
+            right: -93px;
+            width: 228px;
+            height: 228px;
+            border-radius: 228px;
+            background-color: var(--color-brand-normal);
+            filter: blur(69px);
+            z-index: -1;
+        }
+    }
+
+    &__container {
+        background-image: url(/static/images/desk/lesson.webp);
+        background-position: center bottom 0;
+        background-size: 290px 245px;
+        background-repeat: no-repeat;
+        @media screen and (min-width: $bp-tablet) {
+            background-size: 300px 244px;
+            background-position: left 32px center;
+        }
+
+        @media screen and (min-width: $bp-desktop) {
+            background-size: 546px 426px;
+        }
+    }
+
+    &__block {
+        padding-bottom: 245px;
+        @media screen and (min-width: $bp-tablet) {
+            padding-bottom: 0;
+            margin-left: auto;
+            width: 322px;
+        }
+
+        @media screen and (min-width: $bp-desktop) {
+            padding-top: 112px;
+            padding-bottom: 50px;
+            width: 599px;
+        }
+    }
+
+    &__title {
+        text-align: left;
+        margin-bottom: 16px;
+        @media screen and (min-width: $bp-tablet) {
+            margin-bottom: 12px;
+        }
+
+        @media screen and (min-width: $bp-desktop) {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__note {
+        font-size: 14px;
+        margin-bottom: 10px;
+        font-weight: 400;
+        @media screen and (min-width: $bp-tablet) {
+            font-size: 16px;
+        }
+
+        @media screen and (min-width: $bp-desktop) {
+            font-size: 20px;
+        }
+    }
+}

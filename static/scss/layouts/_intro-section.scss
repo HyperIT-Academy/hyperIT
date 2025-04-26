@@ -1,0 +1,159 @@
+.intro {
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 75px;
+        left: -100px;
+        width: 198px;
+        height: 198px;
+        border-radius: 198px;
+        filter: blur(60px);
+        background-color: var(--color-brand-normal);
+        z-index: -1;
+        @media screen and (min-width: $bp-tablet) {
+            top: 83px;
+            left: -122px;
+            width: 344px;
+            height: 344px;
+            border-radius: 344px;
+            filter: blur(105px);
+        }
+
+        @media screen and (min-width: $bp-desktop) {
+            top: 226px;
+            left: -46px;
+            width: 476px;
+            height: 476px;
+            border-radius: 476px;
+            filter: blur(145px);
+        }
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 75px;
+        right: -100px;
+        width: 198px;
+        height: 198px;
+        border-radius: 198px;
+        filter: blur(76px);
+        background-color: var(--color-secondary-yellow);
+        z-index: -1;
+        @media screen and (min-width: $bp-tablet) {
+            top: 95px;
+            right: -74px;
+            width: 309px;
+            height: 309px;
+            border-radius: 309px;
+            filter: blur(132px);
+        }
+
+        @media screen and (min-width: $bp-desktop) {
+            top: 213px;
+            right: -28px;
+            width: 427px;
+            height: 427px;
+            border-radius: 427px;
+            filter: blur(182px);
+        }
+    }
+
+    &__container {
+        padding-bottom: 248px;
+        background-image: url(/static/images/desk/intro.webp);
+        background-position: bottom -8px center;
+        background-size: 275px 250px;
+        background-repeat: no-repeat;
+        @media screen and (min-width: $bp-tablet) {
+            padding-bottom: 0;
+            background-size: 280px 255px;
+            background-position: bottom -12px left 412px;
+        }
+
+        @media screen and (min-width: $bp-desktop) {
+            padding-bottom: 61px;
+            background-size: 485px 460px;
+            background-position: bottom -40px left 727px;
+        }
+    }
+
+    &__title {
+        margin-bottom: 16px;
+        text-align: left;
+        @media screen and (min-width: $bp-tablet) {
+            margin-bottom: 12px;
+            width: 372px;
+        }
+
+        @media screen and (min-width: $bp-desktop) {
+            margin-bottom: 20px;
+            width: 621px;
+            padding-top: 63px;
+        }
+    }
+
+    &__note {
+        font-size: 14px;
+        font-weight: 400;
+        @media screen and (min-width: $bp-tablet) {
+            font-size: 16px;
+            width: 342px;
+        }
+
+        @media screen and (min-width: $bp-desktop) {
+            font-size: 20px;
+            width: 586px;
+        }
+
+        &:first-child {
+            margin-bottom: 14px;
+        }
+    }
+
+    .free-lesson-block {
+        &::before {
+            width: 74px;
+            height: 46px;
+            top: 16px;
+            left: 25px;
+            background-image: url(/static/images/desk/fly-left.webp);
+            @media screen and (min-width: $bp-tablet) {
+                width: 113px;
+                height: 72px;
+                top: 61px;
+                left: 31px;
+            }
+
+            @media screen and (min-width: $bp-desktop) {
+                width: 204px;
+                height: 129px;
+                top: 142px;
+                left: 56px;
+            }
+        }
+
+        &::after {
+            width: 60px;
+            height: 45px;
+            top: 17px;
+            right: 28px;
+            background-image: url(/static/images/desk/fly-right.webp);
+            @media screen and (min-width: $bp-tablet) {
+                width: 99px;
+                height: 74px;
+                top: 61px;
+                right: 29px;
+            }
+
+            @media screen and (min-width: $bp-desktop) {
+                width: 178px;
+                height: 133px;
+                top: 140px;
+                right: 56px;
+            }
+        }
+    }
+}

@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HyperIT</title>
+    <link rel="stylesheet" href="./static/css/main.min.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@17.0.8/build/css/intlTelInput.css" />
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1011325767623678');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=1011325767623678&ev=PageView&noscript=1"
+    /></noscript>
+</head>
+<body>
+    <header class="header">
+        <a href="/" aria-label="Посилання на головну сторінку сайту">
+            <img class="header__logo" width="130" height="40" src="/static/images/logo.png" alt="Логотип сайту">
+        </a>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1 class="hero__title">Програмування в Minecraft онлайн для дітей 8–13 років</h1>
+                <p class="hero__sub-title">Перетворюємо навчання на гру, а програмування — на улюблений предмет!</p>
+                <p class="hero__free-lesson-text">Перше пробне заняття БЕЗКОШТОВНО</p>
+                <div class="hero-form">
+                    <form class="form" id="hero">
+                        <div class="hero-form__all-fields">
+                            <div class="hero-form__field">
+                                <label class="hero-form__label input-label">Ім'я</label>
+                                <input class="hero-form__input input-field hero-input-name" name="name" type="text" placeholder="Ім'я">
+                                <div class="error error-name"></div>
+                            </div>
+                            <div class="hero-form__field">
+                                <label class="hero-form__label input-label">Контактний телефон</label>
+                                <input class="hero-form__input input-field hero-input-phone" name="phone" type="tel">
+                                <div class="error error-phone"></div>
+                            </div>
+                            <div class="hero-form__field">
+                                <label class="hero-form__label input-label">Email</label>
+                                <input class="hero-form__input input-field hero-input-email" name="email" type="email" placeholder="email@gmail.com">
+                                <div class="error error-email"></div>
+                            </div>
+                            <div class="hero-form__field field-checkbox">
+                                <label class="input-label-checkbox">
+                                    <input class="visually-hidden just-validate-success-field hero-input-privacy" type="checkbox" name="agree" checked="checked" value="agree">
+                                    <span class="checkbox"></span>Відправкою даної заявки я підтверджую, що я ознайомлений з 
+                                        <a href="#">Політикою конфіденційності</a>приймаю її умови і згоден з нею, включаючи ті, що стосуються регламентації обробки моїх персональних даних
+                                </label>
+                                <div class="error error-privacy"></div>
+                            </div>
+                            <button class="btn hero-form__button" type="submit">Зареєструватися</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <section class="advantages">
+            <div class="container">
+                <div class="advantages__block">
+                    <h2 class="advantages__title section-title">Хочете дати своїй дитині сильний старт у майбутнє?</h2>
+                    <p class="advantages__sub-title">Відкрийте перед нею двері в майбутнє.<br> З цими знаннями навчання в школі стане захопливим квестом, а вибір професії — справжньою пригодою до мрії.</p>
+                    <p class="advantages__note"> На курсі «Minecraft» діти в ігровій формі опановують програмування з нуля.<br> Знайомляться з циклами, змінними, логікою та алгоритмами. </p>
+                </div>
+            </div>
+        </section>
+        <section class="intro section">
+            <div class="intro__container container">
+                <div class="free-lesson-block">
+                    <p class="free-lesson-block__text">Дозвольте дитині спробувати себе в ролі програміста на <span>безплатному занятті</span></p>
+                    <button class="btn free-lesson-block__button free-lesson-btn-js" type="button">Записатись</button>
+                </div>
+                <h2 class="intro__title section-title">Minecraft — це ідеальний старт в IT</h2>
+                <p class="intro__note">Офіційний продукт Microsoft — Minecraft: Education — адаптує знайому гру для навчання та вже застосовується в 115 країнах.</p>
+                <p class="intro__note">Інтерактивні уроки дозволяють дітям легко розбиратися в цифровому світі та отримувати перші ключові ІТ-навички.</p>
+            </div>
+        </section>
+        <section class="lesson section">
+            <div class="lesson__container container">
+                <div class="lesson__block">
+                    <h2 class="lesson__title section-title">Чим учні займаються на уроках?</h2>
+                    <p class="lesson__note"> Будують різні об'єкти та механізми у Minecraft. </p>
+                    <p class="lesson__note">Вони вчаться програмувати за допомогою блоків коду, розв’язують прості задачі з логікою та точними обчисленнями.</p>
+                </div>
+            </div>
+        </section>
+        <section class="details section">
+            <div class="details__container container">
+                <div class="free-lesson">
+                    <h2 class="free-lesson__title section-title">Чи може улюблена гра навчити дитину мислити як програміст?</h2>
+                    <p class="free-lesson__text">Перевіримо на <span>безкоштовному занятті</span></p>
+                </div>
+                <div class="details__block">
+                    <ul class="details-list">
+                        <li class="details-list__item">
+                            <h3 class="details-list__item-title">Формат:</h3>
+                            <p class="details-list__item-note">онлайн-зустріч в Google Meet</p>
+                        </li>
+                        <li class="details-list__item">
+                            <h3 class="details-list__item-title">Тривалість:</h3>
+                            <p class="details-list__item-note">40-45 хв</p>
+                        </li>
+                    </ul>
+                    <ul class="details-second-list">
+                        <li class="details-second-list__item">
+                            <h3 class="details-second-list__item-title">Що буде:</h3>
+                            <ul class="internal-list">
+                                <li><p class="internal-list__item">тестування здібностей</p></li>
+                                <li><p class="internal-list__item">практична робота</p></li>
+                                <li><p class="internal-list__item">консультація</p></li>
+                            </ul>
+                        </li>
+                        <li class="details-second-list__item">
+                            <h3 class="details-second-list__item-title">На занятті учень:</h3>
+                            <ul class="second-internal-list">
+                                <li><p class="second-internal-list__item">познайомиться з платформою Minecraft</p></li>
+                                <li><p class="second-internal-list__item">створить перший 3D-об’єкт</p></li>
+                                <li><p class="second-internal-list__item">спробує запрограмувати персонажа</p></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <button class="btn details__button free-lesson-btn-js" type="button">Записатись</button>
+            </div>
+        </section>
+        <section class="practice section">
+            <div class="container">
+                <h2 class="practice__title section-title">HyperIT Academy — це місце, де учні здобувають знання та одразу застосовують їх у практиці</h2>
+                <ul class="practice-list">
+                    <li class="practice-list__item">
+                        <h3 class="practice-list__title">Можливо, зараз ваша дитина…</h3>
+                        <ul class="enumeration">
+                            <li class="enumeration__item">Захоплюється технологіями, ставить багато питань, але не знаходить відповідей.</li>
+                            <li class="enumeration__item">Втрачає інтерес до шкільних предметів, а домашні завдання викликають тільки стрес та сльози.</li>
+                            <li class="enumeration__item">Проводить увесь вільний час у гаджетах переважно в іграх або соцмережах.</li>
+                            <li class="enumeration__item">Уникає спілкування з однолітками, виглядає замкнутою, не проявляє ніякої активності.</li>
+                        </ul>
+                    </li>
+                    <li class="practice-list__item">
+                        <h3 class="practice-list__title">Але за кілька місяців навчання…</h3>
+                        <ul class="enumeration">
+                            <li class="enumeration__item">Дитина з захопленням вивчає програмування, вчиться мислити як розробник та втілює власні ідеї у віртуальному світі.</li>
+                            <li class="enumeration__item">Математичні та логічні задачі перестають лякати — навпаки, викликають інтерес та азарт.</li>
+                            <li class="enumeration__item"> У Minecraft вона створює складні конструкції та механізми, паралельно засвоюючи основи інформатики, фізики та просторового мислення.</li>
+                            <li class="enumeration__item">Починає активніше спілкуватися, знаходить друзів за інтересами, розкриває себе як лідер.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="class section">
+            <div class="container">
+                <h2 class="class__title section-title">Курс Minecraft — це онлайн-навчання програмуванню, де ваша дитина:</h2>
+                <ul class="class__list">
+                    <li class="class__list-item" data-list-item="01">Освоїть основи програмування</li>
+                    <li class="class__list-item" data-list-item="02">Здобуде базові знання з математики, фізики та хімії</li>
+                    <li class="class__list-item" data-list-item="03">Покращить рівень володіння рідною та англійською мовами</li>
+                    <li class="class__list-item" data-list-item="04">Набуде базових інженерних навичок</li>
+                    <li class="class__list-item" data-list-item="05">Розвине логічне мислення, просторову уяву та креативність</li>
+                    <li class="class__list-item" data-list-item="06">Навчиться працювати в команді</li>
+                </ul>
+            </div>
+        </section>
+        <section class="learning section">
+            <div class="container">
+                <div class="free-lesson-block">
+                    <p class="free-lesson-block__text">Перевірте якість навчання особисто<br>запишіться на <span>безкоштовне заняття</span></p>
+                    <button class="btn free-lesson-block__button free-lesson-btn-js" type="button">Записатись</button>
+                </div>
+                <h2 class="learning__title section-title">Як проходить навчання?</h2>
+                <ul class="learning__cards">
+                    <li class="card-item">
+                        <h3 class="card-item__title">Особистий кабінет</h3>
+                        <p class="card-item__text">В якому є всі навчальні матеріалами та записи уроків.</p>
+                    </li>
+                    <li class="card-item">
+                        <h3 class="card-item__title">Цікаві ДЗ</h3>
+                        <p class="card-item__text">Учні виконують завдання з задоволенням та отримують зворотний зв’язок від викладача.</p>
+                    </li>
+                    <li class="card-item">
+                        <h3 class="card-item__title">Онлайн формат</h3>
+                        <p class="card-item__text">Навчання проходить онлайн в Google Meet, тому можна навчатися у будь якій точці світу.</p>
+                    </li>
+                    <li class="card-item">
+                        <h3 class="card-item__title">Ком’юніті студентів</h3>
+                        <p class="card-item__text">Місце де діти знаходять нових друзів за інтересами.</p>
+                    </li>
+                    <li class="card-item">
+                        <h3 class="card-item__title">Ком’юніті студентів</h3>
+                        <p class="card-item__text">Невеликі групи, 10-12 дітей, де кожна дитина отримує максимум уваги.</p>
+                    </li>
+                    <li class="card-item">
+                        <h3 class="card-item__title">Онлайн-підтримка</h3>
+                        <p class="card-item__text">Ми створюємо комфортне середовище, де кожен з батьків може бути в курсі всього, що стосується навчання їхньої дитини.</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="reviews section">
+            <div class="reviews__container container">
+                <div class="reviews__description">
+                    <h2 class="reviews__title section-title">Ефективність нашої програми доведена на практиці.</h2>
+                    <p class="reviews__sub-title">Що думають батьки про HyperIT Academy:</p>
+                </div>
+                <div class="reviews-carousel">
+                    <div>
+                        <div>
+                            <div class="reviews-carousel__item-block">
+                                <div class="reviews-carousel__review">
+                                    <p class="reviews-carousel__review-title">Дитина в захваті — і ми теж!</p>
+                                    <p class="reviews-carousel__review-text">Навчаємось на курсі Minecraft вже 6 місяців — і це одна з найкращих інвестицій у розвиток дитини. <br>Все організовано на високому рівні: чітко, продумано, з любов'ю до дітей. <br>Викладачі — справжні профі, які надихають! Щиро дякуємо команді HyperIT Academy. Рекомендуємо всім, хто шукає якісне онлайн-навчання для своєї дитини. Успіхів вам!</p>
+                                </div>
+                                <div clas="reviewer">
+                                    <h3 class="reviewer__name">Тищенко Микола</h3>
+                                    <ul class="stars-list">
+                                        <li class="stars-list__star">
+                                            <svg aria-label="Зірочка рейтингу" height="16" width="16"> 
+                                                <use href="/static/images/sprite.svg#icon-star"></use> 
+                                            </svg>
+                                        </li>
+                                        <li class="stars-list__star">
+                                            <svg aria-label="Зірочка рейтингу" height="16" width="16"> 
+                                                <use href="/static/images/sprite.svg#icon-star"></use> 
+                                            </svg>
+                                        </li>
+                                        <li class="stars-list__star">
+                                            <svg aria-label="Зірочка рейтингу" height="16" width="16"> 
+                                                <use href="/static/images/sprite.svg#icon-star"></use> 
+                                            </svg>
+                                        </li>
+                                        <li class="stars-list__star">
+                                            <svg aria-label="Зірочка рейтингу" height="16" width="16"> 
+                                                <use href="/static/images/sprite.svg#icon-star"></use> 
+                                            </svg>
+                                        </li>
+                                        <li class="stars-list__star">
+                                            <svg aria-label="Зірочка рейтингу" height="16" width="16"> 
+                                                <use href="/static/images/sprite.svg#icon-star"></use> 
+                                            </svg>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <div class="reviews-carousel__item-block">
+                                <div class="reviews-carousel__review">
+                                    <p class="reviews-carousel__review-title">Курсів багато, але програма від HyperIT — справжній ТОП!</p>
+                                    <p class="reviews-carousel__review-text">Спробували чимало гуртків і шкіл, але HyperIT справді вразила.
+                                        Тут поєднано сучасний підхід до навчання, технології, <br>що цікавлять дітей та підтримку, яка відчувається буквально 24/7.
+                                        Дякуємо команді за професіоналізм і турботу.
+                                        Раді, що обрали саме вас!</p>
+                                </div>
+                                <div clas="reviewer">
+                                    <h3 class="reviewer__name">Суханов Валентин</h3>
+                                    <ul class="stars-list">
+                                        <li class="stars-list__star">
+                                            <svg aria-label="Зірочка рейтингу" height="16" width="16"> 
+                                                <use href="/static/images/sprite.svg#icon-star"></use> 
+                                            </svg>
+                                        </li>
+                                        <li class="stars-list__star">
+                                            <svg aria-label="Зірочка рейтингу" height="16" width="16"> 
+                                                <use href="/static/images/sprite.svg#icon-star"></use> 
+                                            </svg>
+                                        </li>
+                                        <li class="stars-list__star">
+                                            <svg aria-label="Зірочка рейтингу" height="16" width="16"> 
+                                                <use href="/static/images/sprite.svg#icon-star"></use> 
+                                            </svg>
+                                        </li>
+                                        <li class="stars-list__star">
+                                            <svg aria-label="Зірочка рейтингу" height="16" width="16"> 
+                                                <use href="/static/images/sprite.svg#icon-star"></use> 
+                                            </svg>
+                                        </li>
+                                        <li class="stars-list__star">
+                                            <svg aria-label="Зірочка рейтингу" height="16" width="16"> 
+                                                <use href="/static/images/sprite.svg#icon-star"></use> 
+                                            </svg>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <div class="reviews-carousel__item-block">
+                                <div class="reviews-carousel__review">
+                                    <p class="reviews-carousel__review-title">Навчання зручне, доступне і справді працює</p>
+                                    <p class="reviews-carousel__review-text">Все чітко організовано — і для дитини, і для батьків.
+                                        Матеріал подається зрозуміло, навіть у дистанційному форматі все проходить легко й цікаво.
+                                        Дитина впоралась із програмою без стресу, а ми завжди були в курсі прогресу завдяки регулярному зворотному зв’язку.
+                                        Дякуємо HyperIT за якість і турботу!</p>
+                                </div>
+                                <div clas="reviewer">
+                                    <h3 class="reviewer__name">Бойко Тетяна</h3>
+                                    <ul class="stars-list">
+                                        <li class="stars-list__star">
+                                            <svg aria-label="Зірочка рейтингу" height="16" width="16"> 
+                                                <use href="/static/images/sprite.svg#icon-star"></use> 
+                                            </svg>
+                                        </li>
+                                        <li class="stars-list__star">
+                                            <svg aria-label="Зірочка рейтингу" height="16" width="16"> 
+                                                <use href="/static/images/sprite.svg#icon-star"></use> 
+                                            </svg>
+                                        </li>
+                                        <li class="stars-list__star">
+                                            <svg aria-label="Зірочка рейтингу" height="16" width="16"> 
+                                                <use href="/static/images/sprite.svg#icon-star"></use> 
+                                            </svg>
+                                        </li>
+                                        <li class="stars-list__star">
+                                            <svg aria-label="Зірочка рейтингу" height="16" width="16"> 
+                                                <use href="/static/images/sprite.svg#icon-star"></use> 
+                                            </svg>
+                                        </li>
+                                        <li class="stars-list__star">
+                                            <svg aria-label="Зірочка рейтингу" height="16" width="16"> 
+                                                <use href="/static/images/sprite.svg#icon-star"></use> 
+                                            </svg>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="faq section">
+            <div class="container">
+                <h2 class="faq__title section-title">Залишилися питання?</h2>
+                <ul class="faq__list">
+                    <li class="faq__item">
+                        <h3 class="faq__question">Скільки триває навчання?</h3>
+                        <p class="faq__answer hidden">
+                            Курс «Minecraft: Програмування» розрахований на 2 роки:<br><br>
+                            
+                             - 1-й рік — це знайомство з блочним програмуванням, розвиток логіки, креативності та перші кроки у світі цифрових технологій.
+                            <br>
+                             - 2-й рік — поглиблене вивчення: дитина створює складніші проєкти, розвиває алгоритмічне мислення та впевнено опановує основи кодування.</p>
+                        <button class="faq__plus-button faq-btn-js" type="button" aria-label="Показати/приховати відповідь"></button>
+                    </li>
+                    <li class="faq__item">
+                        <h3 class="faq__question">Як побудоване навчання на курсі?</h3>
+                        <p class="faq__answer hidden">Заняття проходять раз на тиждень — у будній день або на вихідних, залежно від того, як зручно вам. Навчання відбувається онлайн через Google Meet у форматі “живої” зустрічі з викладачем.<br>
+                            Кожен урок — це поєднання теорії та практики: діти дізнаються щось нове, пробують фішки Minecraft, виконують вікторини, логічні задачі й креативні челенджі.<br>
+                            Після заняття учні отримують домашнє завдання з коментарями від викладача, щоб краще закріпити матеріал.</p>
+                        <button class="faq__plus-button faq-btn-js" type="button" aria-label="Показати/приховати відповідь"></button>
+                    </li>
+                    <li class="faq__item">
+                        <h3 class="faq__question">Що знадобиться дитині для навчання?</h3>
+                        <p class="faq__answer hidden">Для навчання знадобиться ноутбук або комп’ютер та стабільне підключення до інтернету.
+                            Усі необхідні програми та доступи ми надамо перед стартом курсу — викладач надішле інструкції та допоможе з налаштуванням.</p>
+                        <button class="faq__plus-button faq-btn-js" type="button" aria-label="Показати/приховати відповідь"></button>
+                    </li>
+                    <li class="faq__item">
+                        <h3 class="faq__question">Пропущене заняття — це проблема?</h3>
+                        <p class="faq__answer hidden">Якщо це разовий пропуск — дитина зможе самостійно опрацювати матеріал:
+                            <br>- в особистому кабінеті доступні записи уроків,
+                            <br>- теорія, практика, домашні завдання з поясненнями — усе під рукою.
+                            <br><br>
+                           За потреби можна замовити індивідуальне заняття з викладачем.
+                           А якщо навчання доводиться тимчасово призупинити — є можливість “заморозити” курс до 2-х місяців і повернутися пізніше, приєднавшись до іншої групи або продовжити навчання в індивідуальному форматі.</p>
+                        <button class="faq__plus-button faq-btn-js" type="button" aria-label="Показати/приховати відповідь"></button>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="conclusion section">
+            <div class="conclusion__container container">
+                <h2 class="conclusion__title">Початкова школа — критичний період формування особистості. Усе, що дитина засвоїть зараз, стане фундаментом її майбутніх досягнень.</h2>
+                <div class="free-lesson-block">
+                    <p class="free-lesson-block__text">Дозвольте дитині спробувати себе в ролі програміста на <span>безплатному занятті</span></p>
+                    <button class="btn free-lesson-block__button free-lesson-btn-js" type="button">Записатись</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer__container container">
+            <a href="/">
+                <img class="footer__logo" width="200" height="110" src="/static/images/logo.png" alt="Логотип сайту">
+            </a>
+            <div>
+                <span>Телеграм: <a href="https://t.me/HyperIT_Academy_bot" target="_blank" aria-label="Посилання на телеграм">HyperIT</a></span>
+            </div>
+        </div>
+    </footer>
+    <div class="backdrop is-hidden">
+        <div class="modal">
+            <button class="modal__close-btn" type="button" aria-label="кнопка закриття модального вікна">
+                <svg height="16" width="16"> 
+                    <use href="/static/images/sprite.svg#icon-close"></use> 
+                </svg>
+            </button>
+            <a href="/" class="modal__home-link" aria-label="Посилання на головну сторінку сайту">
+                <img class="modal__logo" width="200" height="110" src="/static/images/logo.png" alt="Логотип сайту">
+            </a>
+            <h2 class="modal__title">Залишити заявку</h2>
+            <form class="hero-form form">
+                <div class="hero-form__all-fields">
+                    <div class="hero-form__field">
+                        <label class="hero-form__label input-label" for="hero_input_name">Ім'я <span class="modal-star">*</span></label>
+                        <input class="hero-form__input input-field hero-input-name" id="hero_input_name" name="name" type="text" placeholder="Ім'я">
+                        <div class="error error-name"></div>
+                    </div>
+                    <div class="hero-form__field">
+                        <label class="hero-form__label input-label" for="hero_input_phone">Контактний телефон <span class="modal-star">*</span></label>
+                        <input class="hero-form__input input-field hero-input-phone" id="hero_input_phone" name="phone" type="tel">
+                        <div class="error error-phone"></div>
+                    </div>
+                    <div class="hero-form__field">
+                        <label class="hero-form__label input-label" for="hero_input_email">Email <span class="modal-star">*</span></label>
+                        <input class="hero-form__input input-field hero-input-email" id="hero_input_email" name="email" type="email" placeholder="email@gmail.com">
+                        <div class="error error-email"></div>
+                    </div>
+                    <div class="hero-form__field field-checkbox">
+                        <label class="input-label-checkbox">
+                            <input class="visually-hidden just-validate-success-field hero-input-privacy" id="hero_input_privacy" type="checkbox" name="agree" checked="checked" value="agree">
+                            <span class="checkbox"></span>Відправкою даної заявки я підтверджую, що я ознайомлений з 
+                                <a href="/privacy.html" target="_blank">Політикою конфіденційності</a>приймаю її умови і згоден з нею, включаючи ті, що стосуються регламентації обробки моїх персональних даних
+                        </label>
+                        <div class="error error-privacy"></div>
+                    </div>
+                    <button class="btn hero-form__button" type="submit">Зареєструватися</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput-jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="./static/js/app.js"></script>
+    <script src="./static/js/modal.js"></script>
+</body>
+</html>

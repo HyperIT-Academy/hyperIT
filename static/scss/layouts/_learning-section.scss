@@ -1,0 +1,293 @@
+.learning {
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: -98px;
+        top: 75px;
+        width: 198px;
+        height: 198px;
+        border-radius: 198px;
+        filter: blur(60px);
+        background-color: var(--color-secondary-yellow);
+        z-index: -2;
+        @media screen and (min-width: $bp-tablet) {
+            top: 21px;
+            left: -122px;
+            width: 344px;
+            height: 344px;
+            border-radius: 344px;
+            filter: blur(105px);
+        }
+
+        @media screen and (min-width: $bp-desktop) {
+            top: 97px;
+            left: -131px;
+            width: 476px;
+            height: 476px;
+            border-radius: 476px;
+            filter: blur(145px);
+        }
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        right: -100px;
+        top: 75px;
+        width: 198px;
+        height: 198px;
+        border-radius: 198px;
+        filter: blur(76px);
+        background-color: var(--color-brand-normal);
+        z-index: -1;
+        @media screen and (min-width: $bp-tablet) {
+            top: 34px;
+            right: -74px;
+            width: 309px;
+            height: 309px;
+            border-radius: 309px;
+            filter: blur(132px);
+        }
+
+        @media screen and (min-width: $bp-desktop) {
+            top: 92px;
+            right: -94px;
+            width: 427px;
+            height: 427px;
+            border-radius: 427px;
+            filter: blur(182px);
+        }
+    }
+
+    .free-lesson-block {
+        @media screen and (min-width: $bp-tablet) {
+            width: 664px;
+        }
+
+        @media screen and (min-width: $bp-desktop) {
+            width: 1200px;
+        }
+
+        &::before {
+            width: 40px;
+            height: 49px;
+            top: 16px;
+            left: 14px;
+            background-image: url(/static/images/learning/desk/walk-left.webp);
+            @media screen and (min-width: $bp-tablet) {
+                width: 71px;
+                height: 88px;
+                top: 44px;
+                left: 32px;
+            }
+    
+            @media screen and (min-width: $bp-desktop) {
+                width: 141px;
+                height: 173px;
+                top: 82px;
+                left: 42px;
+            }
+        }
+
+        &::after {
+            width: 39px;
+            height: 49px;
+            top: 16px;
+            right: 16px;
+            background-image: url(/static/images/learning/desk/walk-right.webp);
+            @media screen and (min-width: $bp-tablet) {
+                width: 69px;
+                height: 88px;
+                top: 44px;
+                right: 29px;
+            }
+
+            @media screen and (min-width: $bp-desktop) {
+                width: 136px;
+                height: 173px;
+                top: 82px;
+                right: 44px;
+            }
+        }
+    }
+
+    &__title {
+        margin-bottom: 20px;
+        @media screen and (min-width: $bp-tablet) {
+            margin-bottom: 30px;
+        }
+
+        @media screen and (min-width: $bp-desktop) {
+            margin-bottom: 37px;
+        }
+    }
+
+    &__cards {
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        gap: 18px;
+        @media screen and (min-width: $bp-tablet) {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            column-gap: 27px;
+            row-gap: 28px;
+        }
+
+        @media screen and (min-width: $bp-desktop) {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            column-gap: 32px;
+            row-gap: 45px;
+        }
+
+        .card-item {
+            position: relative;
+            padding-left: 82px;
+            min-height: 68px;
+            @media screen and (min-width: $bp-tablet) {
+                padding-left: 116px;
+                min-height: 96px;
+            }
+
+            @media screen and (min-width: $bp-desktop) {
+                padding-left: 140px;
+                min-height: 115px;
+            }
+
+            &__title {
+                font-size: 14px;
+                margin-bottom: 4px;
+                font-weight: 600;
+                @media screen and (min-width: $bp-tablet) {
+                    font-size: 16px;
+                    margin-bottom: 8px;
+                }
+
+                @media screen and (min-width: $bp-desktop) {
+                    font-size: 20px;
+                    margin-bottom: 5px;
+                }
+            }
+
+            &__text {
+                font-size: 12px;
+                font-weight: 400;
+                @media screen and (min-width: $bp-tablet) {
+                    font-size: 14px;
+                }
+
+                @media screen and (min-width: $bp-desktop) {
+                    font-size: 16px;
+                }
+            }
+
+            &::before {
+                display: block;
+                position: absolute;
+                content: "";
+                left: 0;
+                top: 50%;
+                width: 68px;
+                height: 68px;
+                transform: translateY(-50%);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                @media screen and (min-width: $bp-tablet) {
+                    width: 96px;
+                    height: 96px;
+                }
+
+                @media screen and (min-width: $bp-desktop) {
+                    width: 115px;
+                    height: 115px;
+                }
+            }
+
+            &::after {
+                display: block;
+                position: absolute;
+                content: "";
+                top: 50%;
+                left: 11px;
+                width: 45px;
+                height: 45px;
+                transform: translateY(-50%);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                @media screen and (min-width: $bp-tablet) {
+                    left: 16px;
+                    width: 64px;
+                    height: 64px;
+                }
+
+                @media screen and (min-width: $bp-desktop) {
+                    left: 19px;
+                    width: 76px;
+                    height: 76px;
+                }
+            }
+
+            &:nth-child(1) {
+                &::before {
+                    background-image: url(/static/images/learning/icon-bg-3.svg);
+                }
+
+                &::after {
+                    background-image: url(/static/images/learning/desk/learning-icon-1.webp);
+                }
+            }
+
+            &:nth-child(2) {
+                &::before {
+                    background-image: url(/static/images/learning/icon-bg-1.svg);
+                }
+
+                &::after {
+                    background-image: url(/static/images/learning/desk/learning-icon-2.webp);
+                }
+            }
+
+            &:nth-child(3) {
+                &::before {
+                    background-image: url(/static/images/learning/icon-bg-4.svg);
+                }
+
+                &::after {
+                    background-image: url(/static/images/learning/desk/learning-icon-3.webp);
+                }
+            }
+
+            &:nth-child(4) {
+                &::before {
+                    background-image: url(/static/images/learning/icon-bg-2.svg);
+                }
+
+                &::after {
+                    background-image: url(/static/images/learning/desk/learning-icon-4.webp);
+                }
+            }
+
+            &:nth-child(5) {
+                &::before {
+                    background-image: url(/static/images/learning/icon-bg-6.svg);
+                }
+
+                &::after {
+                    background-image: url(/static/images/learning/desk/learning-icon-5.webp);
+                }
+            }
+
+            &:nth-child(6) {
+                &::before {
+                    background-image: url(/static/images/learning/icon-bg-5.svg);
+                }
+
+                &::after {
+                    background-image: url(/static/images/learning/desk/learning-icon-6.webp);
+                }
+            }
+        }
+    }
+}
