@@ -11,7 +11,7 @@ $(document).ready(function () {
       $(".form input").removeClass("error is-invalid");
     });
 
-    $(".form").on("submit", function (e) {
+    $(".form").on("submit", async function (e) {
         e.preventDefault();
       
         let isValid = true;
