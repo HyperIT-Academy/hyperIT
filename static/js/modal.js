@@ -54,7 +54,7 @@ $(document).ready(function () {
 
           $.ajax({
             method: "POST",
-            url: "/send",
+            url: "/api/lead",
             contentType: "application/json",
             data: JSON.stringify({ name, phone, email }),
             success: function (res) {
