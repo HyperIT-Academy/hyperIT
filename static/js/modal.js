@@ -52,19 +52,23 @@ $(document).ready(function () {
         if (isValid) {
           alert("Дані валідні! Надсилаємо...");
 
-          $.ajax({
-            method: "POST",
-            url: "/api/lead",
-            contentType: "application/json",
-            data: JSON.stringify({ name, phone, email }),
-            success: function (res) {
-                alert("Лист успішно надіслано!");
-                $(".form")[0].reset();
-            },
-            error: function () {
-                alert("Щось пішло не так. Спробуйте ще раз.");
-            }
-          });
+          const data = {
+        name: name,
+        phone: phone,
+        email: email,
+      };
+
+      const response = await fetch("http://hyperitacademy.com/send", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        alert("Заявка надіслана успішно!");
+      } else {
+        alert("Помилка при надсиланні.");
+      }
         }
     });
 
