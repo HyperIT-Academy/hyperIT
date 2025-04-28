@@ -22,7 +22,7 @@ app.post('/api/send', async (req, res) => {
       budget: 0,
       customerDraft: {
         name: name,
-        number: phone,
+        numbers: [ phone ],
         email: email,
       }
     });
