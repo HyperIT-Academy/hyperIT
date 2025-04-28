@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Видалення +380 для українських номерів
       if (countryCode === "380" && phoneWithCountryCode.startsWith("+380")) {
-        phoneWithCountryCode = phoneWithCountryCode.replace("+380", "");
+        phoneWithCountryCode = phoneWithCountryCode.replace("+38", "");
       }
 
       // Заміна + на 00 для інших країн
