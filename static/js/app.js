@@ -1,7 +1,7 @@
- export function initPhoneInput() {
-    const $input = $(".hero-input-phone");
+export async function initPhoneInput() {
+  const $input = $(".hero-input-phone");
 
-  $input.intlTelInput({
+  await $input.intlTelInput({
     initialCountry: "auto",
     locale: "en",
     localizedCountries: {
@@ -12,22 +12,23 @@
     autoPlaceholder: "polite",
     formatOnDisplay: false,
     separateDialCode: true, 
-    geoIpLookup: function (callback) {
-      fetch("https://ipinfo.io/json?token=9f9dee509d49e4")
-        .then(res => res.json())
-        .then(data => callback(data.country))
-        .catch(() => callback("ua"));
+    geoIpLookup: async function (callback) {
+      try {
+        const res = await fetch("https://ipinfo.io/json?token=9f9dee509d49e4");
+        const data = await res.json();
+        callback(data.country);
+      } catch (e) {
+        callback("ua");
+      }
     },
     utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
   });
 
-
-  setTimeout(() => {
-      document.querySelectorAll(".iti__country-name").forEach(el => {
-        el.textContent = el.textContent.replace(/\s*\(.*?\)/, "");
-      });
-  }, 500);
-  }
+  // Після ініціалізації телефону
+  document.querySelectorAll(".iti__country-name").forEach(el => {
+    el.textContent = el.textContent.replace(/\s*\(.*?\)/, "");
+  });
+}
 
 $(document).ready(function () {
   $(".reviews-carousel").slick({
