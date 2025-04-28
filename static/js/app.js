@@ -36,7 +36,7 @@ $(document).ready(function () {
     nationalMode: true,
     autoPlaceholder: "polite",
     formatOnDisplay: false,
-    separateDialCode: false, 
+    separateDialCode: true, 
     geoIpLookup: function (callback) {
       fetch("https://ipinfo.io/json?token=9f9dee509d49e4")
         .then(res => res.json())
