@@ -63,7 +63,9 @@ document.addEventListener("DOMContentLoaded", function () {
       form.querySelector(".error-phone").textContent = "Номер телефону невірний!";
       form.querySelector(".hero-input-phone").classList.add("error");
       isValid = false;
-    } else {
+    }
+
+    if(isPhoneValid) {
         let phoneWithCountryCode = phone;
         const countryData = iti.getSelectedCountryData();
         const countryCode = countryData.dialCode; // Отримуємо код країни
