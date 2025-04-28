@@ -1,3 +1,5 @@
+import { initPhoneInput } from './app.js'
+
 $(document).ready(function () {
 
     $(".free-lesson-btn-js").on("click", function() {
@@ -10,6 +12,8 @@ $(document).ready(function () {
       $(".error").text("");
       $(".form input").removeClass("error is-invalid");
     });
+
+    const iti = initPhoneInput();
 
     $(".form").on("submit", async function (e) {
         e.preventDefault();
@@ -30,9 +34,6 @@ $(document).ready(function () {
           form.find(".hero-input-name").addClass("error");
           isValid = false;
         }
-      
-        const phoneInput = form.find(".hero-input-phone")[0];
-        const iti = window.intlTelInput(phoneInput);
 
         if (!iti.isValidNumber()) {
             form.find(".error-phone").text("Номер телефону невірний!");
