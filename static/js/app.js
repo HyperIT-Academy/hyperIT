@@ -23,8 +23,8 @@ $(document).ready(function () {
       $(this).toggleClass("rotate");
   });
 
-
-  const $input = $(".hero-input-phone");
+  export function initPhoneInput() {
+    const $input = $(".hero-input-phone");
 
   $input.intlTelInput({
     initialCountry: "auto",
@@ -52,4 +52,5 @@ $(document).ready(function () {
         el.textContent = el.textContent.replace(/\s*\(.*?\)/, "");
       });
   }, 500);
+  }
 });
