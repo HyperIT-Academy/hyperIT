@@ -19,10 +19,10 @@ app.post('/api/send', async (req, res) => {
       secret: SMARTCRM_SECRET,
       pipelineId: 6046,
       stageId: 42467,
-      contact: {
-        name,
-        phone,
-        email,
+      "customerDraft": {
+        "name": name,
+        "number": phone,
+        "email": email
       },
     });
  console.log('Відповідь від CRM:', response.data); 
