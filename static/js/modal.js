@@ -50,7 +50,7 @@ $(document).ready(function () {
         }
       
         if (isValid) {
-          alert("Дані валідні! Надсилаємо...");
+          alert("Зберігаємо ваші дані");
         
           const data = {
             name: name,
@@ -64,15 +64,19 @@ $(document).ready(function () {
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify(data),
             });
-        
+
+             const botLink = `https://t.me/HyperIT_Academy_bot`;
+
             if (response.ok) {
               alert("Заявка надіслана успішно!");
             } else {
-              alert("Помилка при надсиланні. Спробуйте ще раз.");
+              alert("Ваші дані не вдалося зберегти");
+              window.location.href = botLink;
             }
           } catch (error) {
             console.error(error);
             alert("Сталася помилка при підключенні до сервера.");
+            window.location.href = botLink;
           }
         }
     });
