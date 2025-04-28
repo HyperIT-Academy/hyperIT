@@ -31,11 +31,8 @@ $(document).ready(function () {
           isValid = false;
         }
       
-          const phoneInput = form.find(".hero-input-phone")[0];  // отримуємо інпут
-          const iti = window.intlTelInput(phoneInput, {
-            separateDialCode: true, 
-            utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@17.0.8/build/js/utils.js"
-          });
+        const phoneInput = form.find(".hero-input-phone")[0];
+        const iti = window.intlTelInput(phoneInput);
 
         if (!iti.isValidNumber()) {
             form.find(".error-phone").text("Номер телефону невірний!");
