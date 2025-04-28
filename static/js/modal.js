@@ -1,45 +1,94 @@
-$(document).ready(function () {
-  $(".form").on("submit", async function (e) {
+document.addEventListener("DOMContentLoaded", function () {
+    const phoneInputs = document.querySelectorAll(".hero-input-phone");
+
+  const itis = [];
+
+  // Ініціалізація плагіна для кожного інпуту
+  phoneInputs.forEach(function (input, index) {
+    const iti = window.intlTelInput(input, {
+      initialCountry: "auto",
+      locale: "en",
+      localizedCountries: {
+        cg: "Congo - Brazzaville",
+        cd: "Congo - Kinshasa"
+      },
+      nationalMode: true,
+      autoPlaceholder: "polite",
+      formatOnDisplay: false,
+      separateDialCode: false, 
+      geoIpLookup: function (callback) {
+        fetch("https://ipinfo.io/json?token=9f9dee509d49e4")
+          .then(res => res.json())
+          .then(data => callback(data.country))
+          .catch(() => callback("ua"));
+      },
+      utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
+    });
+    itis[index] = iti;
+  });
+
+  const forms = document.querySelectorAll(".form");
+
+   forms.forEach(function (form) {
+  form.addEventListener("submit", async function (e) {
     e.preventDefault();
     
     let isValid = true;
+
+    const name = form.querySelector(".hero-input-name").value.trim();
+    const phone = form.querySelector(".hero-input-phone").value.trim();
+    const email = form.querySelector(".hero-input-email").value.trim();
+    const privacy = form.querySelector(".hero-input-privacy").checked;
+
+    // Очистка попередніх помилок
+    form.querySelectorAll(".error").forEach(error => error.textContent = "");
+    form.querySelectorAll("input").forEach(input => input.classList.remove("error"));
     
-    const form = $(this);
-    const name = form.find(".hero-input-name").val().trim();
-    const phone = form.find(".hero-input-phone").val().trim();
-    const email = form.find(".hero-input-email").val().trim();
-    const privacy = form.find(".hero-input-privacy").is(":checked");
-
-    form.find(".error").text("");
-    form.find("input").removeClass("error");
-
+    // Валідація імені
     if (name === "") {
-      form.find(".error-name").text("Ім’я обовʼязкове");
-      form.find(".hero-input-name").addClass("error");
+      form.querySelector(".error-name").textContent = "Ім’я обовʼязкове";
+      form.querySelector(".hero-input-name").classList.add("error");
       isValid = false;
     }
 
-    // Перевірка валідності номера телефону
-    if (!/^\+?[1-9]\d{7,14}$/.test(phone)) {
-      form.find(".error-phone").text("Номер телефону невірний!");
-      form.find(".hero-input-phone").addClass("error");
+    // Знаходимо найближчий інпут до натиснутої кнопки
+    const closestInput = form.querySelector('.hero-input-phone');
+    
+      const inputIndex = Array.from(phoneInputs).indexOf(closestInput); // Отримуємо індекс інпуту
+
+      const iti = itis[inputIndex]; // Отримуємо інстанс плагіна для цього інпуту
+
+
+    // Валідація номера телефону
+    const isPhoneValid = iti.isValidNumber();
+    if (!isPhoneValid) {
+      form.querySelector(".error-phone").textContent = "Номер телефону невірний!";
+      form.querySelector(".hero-input-phone").classList.add("error");
+      isValid = false;
+    } else {
+      const countryData = iti.getSelectedCountryData();
+      const countryCode = countryData.dialCode;
+      console.log(`Код країни для інпуту ${inputIndex + 1}:`, countryCode);
+    }
+
+    // Валідація email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      form.querySelector(".error-email").textContent = "Email має бути валідним";
+      form.querySelector(".hero-input-email").classList.add("error");
       isValid = false;
     }
 
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      form.find(".error-email").text("Email обовʼязковий і має бути валідним");
-      form.find(".hero-input-email").addClass("error");
-      isValid = false;
-    }
-
+    // Валідація прийняття умов
     if (!privacy) {
-      form.find(".error-privacy").text("Потрібно погодитися з умовами");
-      form.find(".checkbox").addClass("is-invalid");
+      form.querySelector(".error-privacy").textContent = "Потрібно погодитися з умовами";
+      form.querySelector(".checkbox").classList.add("is-invalid");
       isValid = false;
     }
 
+    // Якщо всі перевірки пройдені, відправляємо дані
     if (isValid) {
-      alert("Зберігаємо ваші дані");
+      console.log("Зберігаємо ваші дані");
 
       const data = {
         name: name,
@@ -69,7 +118,11 @@ $(document).ready(function () {
       }
     }
   });
-  
+});
+
+});
+
+$(document).ready(function () {
     $(".form input").on("input", function () {
         const $input = $(this);
         const value = $input.val().trim();
