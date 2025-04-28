@@ -123,6 +123,16 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 $(document).ready(function () {
+    $(".free-lesson-btn-js").on("click", function() {
+      $(".backdrop").removeClass("is-hidden");
+    });
+
+    $(".modal__close-btn").on("click", function() {
+      $(".backdrop").addClass("is-hidden");
+      $(".error").text("");
+      $(".form input").removeClass("error is-invalid");
+    });
+
     $(".form input").on("input", function () {
         const $input = $(this);
         const value = $input.val().trim();
