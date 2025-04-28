@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Якщо всі перевірки пройдені, відправляємо дані
     if (isValid) {
-      console.log("Зберігаємо ваші дані");
+      alert("Зберігаємо ваші дані");
 
       const data = {
         name: name,
@@ -116,6 +116,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (response.ok) {
           alert("Заявка надіслана успішно!");
+          form.reset();
         } else {
           alert("Ваші дані не вдалося зберегти");
           const botLink = `https://t.me/HyperIT_Academy_bot`;
