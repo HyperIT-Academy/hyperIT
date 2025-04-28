@@ -14,7 +14,7 @@ app.post('/api/send', async (req, res) => {
   const { name, phone, email } = req.body;
 
   try {
-    const response = await axios.post('https://api.binotel.com/api/4.0/crm/deal/create', {
+    const response = await axios.post('https://api.binotel.com/api/4.0/smartcrm/deal-create.json', {
       key: SMARTCRM_KEY,
       secret: SMARTCRM_SECRET,
       pipelineId: 6046,
