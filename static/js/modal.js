@@ -35,7 +35,7 @@ $(document).ready(function () {
           isValid = false;
         }
 
-        const isPhoneValid = iti.isValidNumberPrecise();
+        const isPhoneValid = iti.isValidNumber();
           if (!isPhoneValid) {
             form.find(".error-phone").text("Номер телефону невірний!");
             form.find(".hero-input-phone").addClass("error");
