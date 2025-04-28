@@ -1,24 +1,24 @@
-const $input = $(".hero-input-phone");
+$(".hero-input-phone").each(function() {
+  const $input = $(this);
 
-// ініціалізація плагіну intlTelInput
-const iti = $input.intlTelInput({
-  initialCountry: "auto",
-  locale: "en",
-  localizedCountries: {
-    cg: "Congo - Brazzaville",
-    cd: "Congo - Kinshasa"
-  },
-  nationalMode: true,
-  autoPlaceholder: "polite",
-  formatOnDisplay: false,
-  separateDialCode: false, 
-  geoIpLookup: function (callback) {
-    fetch("https://ipinfo.io/json?token=9f9dee509d49e4")
-      .then(res => res.json())
-      .then(data => callback(data.country))
-      .catch(() => callback("ua"));
-  },
-  utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
+  const iti = $input.intlTelInput({
+    initialCountry: "auto",
+    locale: "en",
+    localizedCountries: {
+      cg: "Congo - Brazzaville",
+      cd: "Congo - Kinshasa"
+    },
+    nationalMode: true,
+    autoPlaceholder: "polite",
+    formatOnDisplay: false,
+    separateDialCode: false, 
+    geoIpLookup: function (callback) {
+      fetch("https://ipinfo.io/json?token=9f9dee509d49e4")
+        .then(res => res.json())
+        .then(data => callback(data.country))
+        .catch(() => callback("ua"));
+    },
+    utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
 });
 
 $(document).ready(function () {
@@ -33,8 +33,6 @@ $(document).ready(function () {
       $(".error").text("");
       $(".form input").removeClass("error is-invalid");
     });
-
-  const itiInstance = $input.intlTelInput("getInstance");
 
     $(".form").on("submit", async function (e) {
         e.preventDefault();
@@ -56,7 +54,7 @@ $(document).ready(function () {
           isValid = false;
         }
 
-          const isPhoneValid = itiInstance.isValidNumber();
+          const isPhoneValid = iti.isValidNumber();
           if (!isPhoneValid) {
             form.find(".error-phone").text("Номер телефону невірний!");
             form.find(".hero-input-phone").addClass("error");
