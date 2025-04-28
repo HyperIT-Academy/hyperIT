@@ -65,17 +65,17 @@ $(document).ready(function () {
               body: JSON.stringify(data),
             });
 
-             const botLink = `https://t.me/HyperIT_Academy_bot`;
-
             if (response.ok) {
               alert("Заявка надіслана успішно!");
             } else {
               alert("Ваші дані не вдалося зберегти");
+              const botLink = `https://t.me/HyperIT_Academy_bot`;
               window.location.href = botLink;
             }
           } catch (error) {
             console.error(error);
             alert("Сталася помилка при підключенні до сервера.");
+            const botLink = `https://t.me/HyperIT_Academy_bot`;
             window.location.href = botLink;
           }
         }
