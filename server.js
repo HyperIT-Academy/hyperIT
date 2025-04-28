@@ -28,18 +28,20 @@ app.post('/api/send', async (req, res) => {
   const { name, phone, email } = req.body;
 
   try {
+    // 1. Створюємо клієнта
     const clientResponse = await axios.post('https://api.binotel.com/api/4.0/smartcrm/client-create.json', {
       key: SMARTCRM_KEY,
       secret: SMARTCRM_SECRET,
       assignedToId: 0,
-      pipelineId: 6046,
-      stageId: 42467,
+      pipelineId: 6046,  // твій pipeline
+      stageId: 42467,    // твій етап
       budget: 0,
       name: name,
-      numbers: [phone],
+      numbers: [phone],  // використовуємо масив для телефонів
       email: email,
     });
 
+    // Перевірка, чи клієнт створений
     const customerId = clientResponse.data?.result?.id;
 
     if (!customerId) {
@@ -53,9 +55,9 @@ app.post('/api/send', async (req, res) => {
     const dealResponse = await axios.post('https://api.binotel.com/api/4.0/smartcrm/deal-create.json', {
       key: SMARTCRM_KEY,
       secret: SMARTCRM_SECRET,
-      pipelineId: 6046,     // той самий pipeline
-      stageId: 42467,       // той самий етап
-      customerId: customerId,
+      pipelineId: 6046,    // той самий pipeline
+      stageId: 42467,      // той самий етап
+      customerId: customerId,  // Прив'язуємо угоду до клієнта
       budget: 0,
       contacts: [
         {
@@ -71,13 +73,14 @@ app.post('/api/send', async (req, res) => {
     res.json({ success: true, data: dealResponse.data });
 
   } catch (error) {
-  if (error.response) {
-    console.error('Повна відповідь помилки CRM:', JSON.stringify(error.response.data, null, 2));
-  } else {
-    console.error('Unknown Error:', error.message);
+    if (error.response) {
+      // Логування повної відповіді від CRM
+      console.error('Повна відповідь помилки CRM:', JSON.stringify(error.response.data, null, 2));
+    } else {
+      console.error('Unknown Error:', error.message);
+    }
+    res.status(500).json({ success: false, message: 'Помилка при надсиланні в CRM' });
   }
-  res.status(500).json({ success: false, message: 'Помилка при надсиланні в CRM' });
-}
 });
 
 const PORT = process.env.PORT || 3000;
