@@ -55,7 +55,7 @@ app.post('/api/send', async (req, res) => {
 
     res.json({ success: true, data: dealResponse.data });
 
-  } } catch (error) {
+  } catch (error) {
   if (error.response) {
     console.error('Повна відповідь помилки CRM:', JSON.stringify(error.response.data, null, 2));
   } else {
