@@ -58,6 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const iti = itis[inputIndex]; // Отримуємо інстанс плагіна для цього інпуту
 
+    let phoneWithCountryCode = phone;
     const isPhoneValid = iti.isValidNumber();
     if (!isPhoneValid) {
       form.querySelector(".error-phone").textContent = "Номер телефону невірний!";
@@ -66,7 +67,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     if(isPhoneValid) {
-        let phoneWithCountryCode = phone;
         const countryData = iti.getSelectedCountryData();
         const countryCode = countryData.dialCode; // Отримуємо код країни
     
