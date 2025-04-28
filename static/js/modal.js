@@ -51,24 +51,29 @@ $(document).ready(function () {
       
         if (isValid) {
           alert("Дані валідні! Надсилаємо...");
-
+        
           const data = {
-        name: name,
-        phone: phone,
-        email: email,
-      };
-
-      const response = await fetch("http://hyperitacademy.com/send", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-
-      if (response.ok) {
-        alert("Заявка надіслана успішно!");
-      } else {
-        alert("Помилка при надсиланні.");
-      }
+            name: name,
+            phone: phone,
+            email: email,
+          };
+        
+          try {
+            const response = await fetch("https://hyperit.onrender.com/api/send", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(data),
+            });
+        
+            if (response.ok) {
+              alert("Заявка надіслана успішно!");
+            } else {
+              alert("Помилка при надсиланні. Спробуйте ще раз.");
+            }
+          } catch (error) {
+            console.error(error);
+            alert("Сталася помилка при підключенні до сервера.");
+          }
         }
     });
 
