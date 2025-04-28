@@ -13,7 +13,7 @@ $(document).ready(function () {
 
  const $input = $(".hero-input-phone");
 
- const iti = $input.intlTelInput({
+ $input.intlTelInput({
     initialCountry: "auto",
     locale: "en",
     localizedCountries: {
@@ -60,7 +60,8 @@ $(document).ready(function () {
           isValid = false;
         }
 
-        const isPhoneValid = iti.isValidNumber();
+          const iti = $input.intlTelInput("getInstance");
+          const isPhoneValid = iti.isValidNumber();
           if (!isPhoneValid) {
             form.find(".error-phone").text("Номер телефону невірний!");
             form.find(".hero-input-phone").addClass("error");
