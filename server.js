@@ -13,18 +13,16 @@ app.post('/api/send', async (req, res) => {
   const { name, phone, email } = req.body;
 
   try {
-    // 1. Створюємо клієнта
     const clientResponse = await axios.post('https://api.binotel.com/api/4.0/smartcrm/client-create.json', {
       key: SMARTCRM_KEY,
       secret: SMARTCRM_SECRET,
-      pipelineId: 6046,    // твій pipeline
-      stageId: 42467,      // твій етап
+      assignedToId: 0,
+      pipelineId: 6046,
+      stageId: 42467,
       budget: 0,
-      customerDraft: {
-        name: name,
-        numbers: [ phone ],
-        email: email,
-      }
+      name: name,
+      numbers: [phone],
+      email: email,
     });
 
     const customerId = clientResponse.data?.result?.id;
