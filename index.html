@@ -396,13 +396,18 @@
         </section>
     </main>
     <footer class="footer">
-        <div class="footer__container container">
+        <div class="footer__container">
             <a href="/">
                 <img class="footer__logo" width="200" height="110" src="/static/images/logo.png" alt="Логотип сайту">
             </a>
-            <div>
-                <span>Телеграм: <a href="https://t.me/HyperIT_Academy_bot" target="_blank" aria-label="Посилання на телеграм">HyperIT</a></span>
-            </div>
+            <a class="footer__telegram-link" href="https://t.me/HyperIT_Academy_bot" target="_blank" aria-label="Посилання на телеграм">
+                <svg height="60" width="60"> 
+                    <use href="/static/images/sprite.svg#icon-telegram"></use> 
+                </svg>
+            </a>
+            <a class="footer__privacy-link" href="/privacy.html">
+                Політика конфіденційності
+            </a>
         </div>
     </footer>
     <div class="backdrop is-hidden">
