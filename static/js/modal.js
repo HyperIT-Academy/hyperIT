@@ -58,29 +58,35 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const iti = itis[inputIndex]; // Отримуємо інстанс плагіна для цього інпуту
 
+    const isPhoneValid = iti.isValidNumber();
+    if (!isPhoneValid) {
+      form.querySelector(".error-phone").textContent = "Номер телефону невірний!";
+      form.querySelector(".hero-input-phone").classList.add("error");
+      isValid = false;
+    } else {
+        let phoneWithCountryCode = phone;
+        const countryData = iti.getSelectedCountryData();
+        const countryCode = countryData.dialCode; // Отримуємо код країни
+    
+        if (phone) {
+          // Якщо номер телефону не містить коду країни, додаємо його
+          if (!phone.startsWith("+")) {
+            phoneWithCountryCode = "+" + countryCode + phone;
+          }
+    
+          // Видалення +380 для українських номерів
+          if (countryCode === "380" && phoneWithCountryCode.startsWith("+380")) {
+            phoneWithCountryCode = phoneWithCountryCode.replace("+38", "");
+          }
+    
+          // Заміна + на 00 для інших країн
+          if (countryCode !== "380" && phoneWithCountryCode.startsWith("+")) {
+            phoneWithCountryCode = phoneWithCountryCode.replace("+", "00");
+          }
+        }
 
-    let phoneWithCountryCode = phone;
-    const countryData = iti.getSelectedCountryData();
-    const countryCode = countryData.dialCode; // Отримуємо код країни
-
-    if (phone) {
-      // Якщо номер телефону не містить коду країни, додаємо його
-      if (!phone.startsWith("+")) {
-        phoneWithCountryCode = "+" + countryCode + phone;
-      }
-
-      // Видалення +380 для українських номерів
-      if (countryCode === "380" && phoneWithCountryCode.startsWith("+380")) {
-        phoneWithCountryCode = phoneWithCountryCode.replace("+38", "");
-      }
-
-      // Заміна + на 00 для інших країн
-      if (countryCode !== "380" && phoneWithCountryCode.startsWith("+")) {
-        phoneWithCountryCode = phoneWithCountryCode.replace("+", "00");
-      }
+        console.log("Оброблений номер телефону:", phoneWithCountryCode);
     }
-
-    console.log("Оброблений номер телефону:", phoneWithCountryCode);
 
     // Валідація email
     const emailRegex = /^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/;
