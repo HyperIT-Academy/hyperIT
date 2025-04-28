@@ -31,11 +31,17 @@ $(document).ready(function () {
           isValid = false;
         }
       
-        if (!/^\+?[0-9\s\-\(\)]{10,20}$/.test(phone)) {
-          form.find(".error-phone").text("Номер телефону невірний!");
-          form.find(".hero-input-phone").addClass("error");
-          isValid = false;
-        }
+          const phoneInput = form.find(".hero-input-phone")[0];  // отримуємо інпут
+          const iti = window.intlTelInput(phoneInput, {
+            separateDialCode: true, 
+            utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@17.0.8/build/js/utils.js"
+          });
+
+        if (!iti.isValidNumber()) {
+            form.find(".error-phone").text("Номер телефону невірний!");
+            form.find(".hero-input-phone").addClass("error");
+            isValid = false;
+          }
       
         if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
           form.find(".error-email").text("Email обовʼязковий і має бути валідним");
