@@ -4,13 +4,21 @@ import axios from 'axios';
 
 const app = express();
 
+// Правильна CORS-конфігурація
 const corsOptions = {
-  origin: 'https://hyperitacademy.com',
+  origin: 'https://hyperitacademy.com',  // тільки твій сайт
   methods: ['GET', 'POST', 'OPTIONS'],
   allowedHeaders: ['Content-Type'],
+  credentials: true, // Якщо потрібно (наприклад, для cookies)
 };
 
+// 1. Обов'язково CORS ставимо перед JSON парсером
 app.use(cors(corsOptions));
+
+// 2. Обов'язково приймаємо preflight OPTIONS-запити:
+app.options('*', cors(corsOptions));
+
+// 3. Далі парсимо json
 app.use(express.json());
 
 const SMARTCRM_KEY = process.env.SMARTCRM_KEY;
