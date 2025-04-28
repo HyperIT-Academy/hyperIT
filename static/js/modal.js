@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Валідація email
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/;
     if (!emailRegex.test(email)) {
       form.querySelector(".error-email").textContent = "Email має бути валідним";
       form.querySelector(".hero-input-email").classList.add("error");
@@ -148,7 +148,7 @@ $(document).ready(function () {
           $(".error-phone").text("");
         }
       
-        if (name === "email" && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+        if (name === "email" && /^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/.test(value)) {
           $input.removeClass("error");
           $(".error-email").text("");
         }
