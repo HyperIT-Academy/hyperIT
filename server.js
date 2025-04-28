@@ -31,7 +31,7 @@ app.post('/api/send', async (req, res) => {
     // 1. Створюємо клієнта
     const clientResponse = await axios.post('https://api.binotel.com/api/4.0/smartcrm/client-create.json', {
       "name": name,
-      "assignedToId": 328701,
+      "assignedToId": 901,
       "email": email,
       "numbers": [phone],
       "key": SMARTCRM_KEY,
