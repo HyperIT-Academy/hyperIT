@@ -45,7 +45,7 @@ $(document).ready(function () {
     }
 
     // Перевірка валідності номера телефону
-    const isPhoneValid = iti[0].isValidNumber();
+    const isPhoneValid = iti[0].validity.valid;
     if (!isPhoneValid) {
       form.find(".error-phone").text("Номер телефону невірний!");
       form.find(".hero-input-phone").addClass("error");
