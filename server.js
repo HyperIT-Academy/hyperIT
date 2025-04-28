@@ -53,6 +53,7 @@ app.post('/api/send', async (req, res) => {
 
     // 2. Створюємо угоду і прив'язуємо клієнта
     const dealResponse = await axios.post('https://api.binotel.com/api/4.0/smartcrm/deal-create.json', {
+      name: dealName,
       key: SMARTCRM_KEY,
       secret: SMARTCRM_SECRET,
       pipelineId: 6046,    // той самий pipeline
@@ -65,8 +66,7 @@ app.post('/api/send', async (req, res) => {
           phones: [phone],
           emails: [email],
         }
-      ],
-      dealName: dealName
+      ]
     });
 
     console.log('Угода створена:', dealResponse.data);
