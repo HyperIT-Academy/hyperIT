@@ -6,10 +6,10 @@ const app = express();
 
 //CORS-конфігурація
 const corsOptions = {
-  origin: 'https://hyperitacademy.com',  // тільки твій сайт
+  origin: 'https://hyperitacademy.com',
   methods: ['GET', 'POST', 'OPTIONS'],
   allowedHeaders: ['Content-Type'],
-  credentials: true, // Якщо потрібно (наприклад, для cookies)
+  credentials: true,
 };
 
 app.use(cors(corsOptions));
@@ -32,7 +32,7 @@ app.post('/api/send', async (req, res) => {
   const dealName = `${name} - Угода від ${currentDate}`;
 
   try {
-    // 1. Створюємо клієнта
+    //Створюємо клієнта
     const clientResponse = await axios.post('https://api.binotel.com/api/4.0/smartcrm/client-create.json', {
       "name": name,
       "assignedToId": 445706,
@@ -52,14 +52,14 @@ app.post('/api/send', async (req, res) => {
 
     console.log('Клієнт створений з ID:', customerId);
 
-    // 2. Створюємо угоду і прив'язуємо клієнта
+    //Створюємо угоду і прив'язуємо клієнта
     const dealResponse = await axios.post('https://api.binotel.com/api/4.0/smartcrm/deal-create.json', {
       name: dealName,
       key: SMARTCRM_KEY,
       secret: SMARTCRM_SECRET,
-      pipelineId: 6046,    // той самий pipeline
-      stageId: 42467,      // той самий етап
-      customerId: customerId,  // Прив'язуємо угоду до клієнта
+      pipelineId: 6046,
+      stageId: 42467,
+      customerId: customerId,
       budget: 0,
       contacts: [
         {
@@ -76,7 +76,6 @@ app.post('/api/send', async (req, res) => {
 
   } catch (error) {
     if (error.response) {
-      // Логування повної відповіді від CRM
       console.error('Повна відповідь помилки CRM:', JSON.stringify(error.response.data, null, 2));
     } else {
       console.error('Unknown Error:', error.message);
