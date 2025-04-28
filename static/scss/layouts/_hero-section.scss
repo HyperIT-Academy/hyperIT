@@ -3,21 +3,21 @@
     padding-top: 85px;
     padding-bottom: 304px;
     background-position: bottom 28px center, center;
-    background-size: 210px 270px, cover;
+    background-size: 195px 270px, cover;
     background-image: url(/static/images/hero/hero-boy.webp), url(/static/images/hero/hero-background.png);
     background-repeat: no-repeat;
     @media screen and (min-width: $bp-tablet) {
         padding-top: 113px;
         padding-bottom: 91px;
-        background-size: 340px 400px, cover;
-        background-position: bottom 58px left calc((100vw - 768px) / 2 + 425px), top 1px left 1px, center;
+        background-size: 300px 400px, cover;
+        background-position: bottom 58px left calc((100vw - 768px) / 2 + 432px), top 1px left 1px, center;
     }
 
     @media screen and (min-width: $bp-desktop) {
         padding-top: 158px;
         padding-bottom: 81px;
-        background-size: 570px 680px, 100% 100%;
-        background-position: top 137px left calc((100vw - 1280px) / 2 + 740px), center;
+        background-size: 490px 680px, 100% 100%;
+        background-position: top 137px left calc((100vw - 1220px) / 2 + 740px), center;
     }
 
     &__title {
