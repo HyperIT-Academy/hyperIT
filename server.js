@@ -3,7 +3,14 @@ import cors from 'cors';
 import axios from 'axios';
 
 const app = express();
-app.use(cors());
+
+const corsOptions = {
+  origin: 'https://hyperitacademy.com',
+  methods: ['GET', 'POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type'],
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 
 const SMARTCRM_KEY = process.env.SMARTCRM_KEY;
