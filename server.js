@@ -34,8 +34,8 @@ app.post('/api/send', async (req, res) => {
       "assignedToId": 0,
       "email": email,
       "numbers": [phone],
-      key: SMARTCRM_KEY,
-      secret: SMARTCRM_SECRET,
+      "key": SMARTCRM_KEY,
+      "secret": SMARTCRM_SECRET,
     });
 
     // Перевірка, чи клієнт створений
