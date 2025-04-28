@@ -10,6 +10,7 @@ const SMARTCRM_KEY = process.env.SMARTCRM_KEY;
 const SMARTCRM_SECRET = process.env.SMARTCRM_SECRET;
 
 app.post('/api/send', async (req, res) => {
+  console.log('Отримано запит на /api/send:', req.body); 
   const { name, phone, email } = req.body;
 
   try {
@@ -24,9 +25,10 @@ app.post('/api/send', async (req, res) => {
         email,
       },
     });
-
+ console.log('Відповідь від CRM:', response.data); 
     res.json({ success: true, data: response.data });
   } catch (error) {
+    console.error('Помилка при надсиланні в CRM:', error.response?.data || error.message);
     console.error(error.response?.data || error.message);
     res.status(500).json({ success: false, message: 'Помилка при надсиланні в CRM' });
   }
