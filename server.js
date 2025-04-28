@@ -6,7 +6,7 @@ const app = express();
 
 // Правильна CORS-конфігурація
 const corsOptions = {
-  origin: '*',  // тільки твій сайт
+  origin: 'https://hyperitacademy.com',  // тільки твій сайт
   methods: ['GET', 'POST', 'OPTIONS'],
   allowedHeaders: ['Content-Type'],
   credentials: true, // Якщо потрібно (наприклад, для cookies)
