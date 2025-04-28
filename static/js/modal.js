@@ -96,7 +96,6 @@ $(document).ready(function () {
     }
   });
 });
-});
 
     $(".form input").on("input", function () {
         const $input = $(this);
