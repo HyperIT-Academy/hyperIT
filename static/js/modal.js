@@ -21,6 +21,8 @@ $(".hero-input-phone").each(function() {
     utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
 });
 
+});
+
 $(document).ready(function () {
 
     $(".free-lesson-btn-js").on("click", function() {
