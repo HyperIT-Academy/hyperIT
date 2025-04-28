@@ -42,7 +42,7 @@ app.post('/api/send', async (req, res) => {
     const customerId = clientResponse.data?.result?.id;
 
     if (!customerId) {
-      console.error('Повна відповідь помилки CRM:', JSON.stringify(error.response.data, null, 2));
+      console.error('Повна відповідь помилки CRM:', JSON.stringify(clientResponse.data, null, 2)); // правильне логування
       return res.status(500).json({ success: false, message: 'Не вдалося створити клієнта' });
     }
 
