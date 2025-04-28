@@ -20,7 +20,7 @@ $(document).ready(function () {
     }
 
     // Перевірка валідності номера телефону
-    if (/^\+?[1-9]\d{1,14}$/.test(phone)) {
+    if (/^\+?[1-9]\d{7,14}$/.test(phone)) {
       form.find(".error-phone").text("Номер телефону невірний!");
       form.find(".hero-input-phone").addClass("error");
       isValid = false;
@@ -80,7 +80,7 @@ $(document).ready(function () {
           $(".error-name").text("");
         }
       
-        if (name === "phone" && /^\+?[1-9]\d{1,14}$/.test(value)) {
+        if (name === "phone" && /^\+?[1-9]\d{7,14}$/.test(value)) {
           $input.removeClass("error");
           $(".error-phone").text("");
         }
