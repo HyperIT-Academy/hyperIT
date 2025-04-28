@@ -4,7 +4,7 @@ import axios from 'axios';
 
 const app = express();
 
-// Правильна CORS-конфігурація
+//CORS-конфігурація
 const corsOptions = {
   origin: 'https://hyperitacademy.com',  // тільки твій сайт
   methods: ['GET', 'POST', 'OPTIONS'],
@@ -12,14 +12,15 @@ const corsOptions = {
   credentials: true, // Якщо потрібно (наприклад, для cookies)
 };
 
-// 1. Обов'язково CORS ставимо перед JSON парсером
 app.use(cors(corsOptions));
 
-// 2. Обов'язково приймаємо preflight OPTIONS-запити:
 app.options('*', cors(corsOptions));
 
-// 3. Далі парсимо json
 app.use(express.json());
+
+app.get('/', (req, res) => {
+  res.send('Server is running!');
+});
 
 const SMARTCRM_KEY = process.env.SMARTCRM_KEY;
 const SMARTCRM_SECRET = process.env.SMARTCRM_SECRET;
@@ -27,7 +28,7 @@ const SMARTCRM_SECRET = process.env.SMARTCRM_SECRET;
 app.post('/api/send', async (req, res) => {
   const { name, phone, email } = req.body;
 
-  const currentDate = new Date().toLocaleDateString(); // Отримуємо поточну дату в зручному форматі
+  const currentDate = new Date().toLocaleDateString();
   const dealName = `${name} - Угода від ${currentDate}`;
 
   try {
@@ -45,7 +46,7 @@ app.post('/api/send', async (req, res) => {
     const customerId = clientResponse.data?.result?.id;
 
     if (!customerId) {
-      console.error('Повна відповідь помилки CRM:', JSON.stringify(clientResponse.data, null, 2)); // правильне логування
+      console.error('Повна відповідь помилки CRM:', JSON.stringify(clientResponse.data, null, 2));
       return res.status(500).json({ success: false, message: 'Не вдалося створити клієнта' });
     }
 
