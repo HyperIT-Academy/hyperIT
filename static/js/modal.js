@@ -13,7 +13,7 @@ $(document).ready(function () {
       $(".form input").removeClass("error is-invalid");
     });
 
-    const iti = initPhoneInput();
+    const iti = await initPhoneInput();
 
     $(".form").on("submit", async function (e) {
         e.preventDefault();
@@ -35,7 +35,7 @@ $(document).ready(function () {
           isValid = false;
         }
 
-        const isPhoneValid = await iti.isValidNumber();
+        const isPhoneValid = iti.isValidNumberPrecise();
           if (!isPhoneValid) {
             form.find(".error-phone").text("Номер телефону невірний!");
             form.find(".hero-input-phone").addClass("error");
