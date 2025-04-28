@@ -2,18 +2,19 @@
     padding: 25px 0;
     background-color: var(--color-primary-dark);
     @media screen and (min-width: $bp-tablet) {
-        padding: 20px 0;
+        padding: 30px 50px;
     }
 
     &__container {
         display: flex;
+        justify-content: space-between;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
-        gap: 20px;
+        gap: 15px;
         font-size: 14px;
         font-weight: 400;
         @media screen and (min-width: $bp-tablet) {
+            flex-direction: row;
             font-size: 18px;
             gap: 25px;
         }
@@ -40,13 +41,32 @@
         width: 135px;
         height: 50px;
         @media screen and (min-width: $bp-tablet) {
-            width: 182px;
-            height: 65px;
+            width: 170px;
+            height: 58px;
+        }
+    }
+
+    &__telegram-link {
+        max-height: 50px;
+        @media screen and (min-width: $bp-tablet) {
+            max-height: 60px;
         }
 
-        @media screen and (min-width: $bp-desktop) {
-            width: 200px;
-            height: 75px;
+        svg {
+            width: 50px;
+            height: 50px;
+            @media screen and (min-width: $bp-tablet) {
+                width: 60px;
+                height: 60px;
+            }
+        }
+    }
+
+    &__privacy-link {
+        font-size: 14px;
+        color: var(--color-brand-hover);
+        @media screen and (min-width: $bp-tablet) {
+            font-size: 16px;
         }
     }
 }
