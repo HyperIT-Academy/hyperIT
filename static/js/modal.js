@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const data = {
         name: name,
-        phone: phone,
+        phone: phoneWithCountryCode,
         email: email,
       };
 
