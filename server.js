@@ -27,6 +27,9 @@ const SMARTCRM_SECRET = process.env.SMARTCRM_SECRET;
 app.post('/api/send', async (req, res) => {
   const { name, phone, email } = req.body;
 
+  const currentDate = new Date().toLocaleDateString(); // Отримуємо поточну дату в зручному форматі
+  const dealName = `${name} - Угода від ${currentDate}`;
+
   try {
     // 1. Створюємо клієнта
     const clientResponse = await axios.post('https://api.binotel.com/api/4.0/smartcrm/client-create.json', {
@@ -62,7 +65,8 @@ app.post('/api/send', async (req, res) => {
           phones: [phone],
           emails: [email],
         }
-      ]
+      ],
+      dealName: dealName
     });
 
     console.log('Угода створена:', dealResponse.data);
