@@ -6,8 +6,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const SMARTCRM_KEY = 'fca8b5-75493b1';
-const SMARTCRM_SECRET = '8e8f3c-7b2d22-f29dc9-ca94b6-403c299e';
+const SMARTCRM_KEY = process.env.SMARTCRM_KEY;
+const SMARTCRM_SECRET = process.env.SMARTCRM_SECRET;
 
 app.post('/api/send', async (req, res) => {
   const { name, phone, email } = req.body;
