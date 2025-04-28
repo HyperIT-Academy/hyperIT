@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
       formatOnDisplay: false,
       separateDialCode: false, 
       geoIpLookup: function (callback) {
-        fetch("https://ipinfo.io/json?token=9f9dee509d49e4")
+        fetch("https://ipinfo.io/json?token=24edd7ad7fa85b")
           .then(res => res.json())
           .then(data => callback(data.country))
           .catch(() => callback("ua"));
