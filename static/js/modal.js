@@ -1,3 +1,26 @@
+const $input = $(".hero-input-phone");
+
+// ініціалізація плагіну intlTelInput
+const iti = $input.intlTelInput({
+  initialCountry: "auto",
+  locale: "en",
+  localizedCountries: {
+    cg: "Congo - Brazzaville",
+    cd: "Congo - Kinshasa"
+  },
+  nationalMode: true,
+  autoPlaceholder: "polite",
+  formatOnDisplay: false,
+  separateDialCode: false, 
+  geoIpLookup: function (callback) {
+    fetch("https://ipinfo.io/json?token=9f9dee509d49e4")
+      .then(res => res.json())
+      .then(data => callback(data.country))
+      .catch(() => callback("ua"));
+  },
+  utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
+});
+
 $(document).ready(function () {
 
     $(".free-lesson-btn-js").on("click", function() {
@@ -11,34 +34,7 @@ $(document).ready(function () {
       $(".form input").removeClass("error is-invalid");
     });
 
- const $input = $(".hero-input-phone");
-
- $input.intlTelInput({
-    initialCountry: "auto",
-    locale: "en",
-    localizedCountries: {
-      cg: "Congo - Brazzaville",
-      cd: "Congo - Kinshasa"
-    },
-    nationalMode: true,
-    autoPlaceholder: "polite",
-    formatOnDisplay: false,
-    separateDialCode: false, 
-    geoIpLookup: function (callback) {
-      fetch("https://ipinfo.io/json?token=9f9dee509d49e4")
-        .then(res => res.json())
-        .then(data => callback(data.country))
-        .catch(() => callback("ua"));
-    },
-    utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
-  });
-
-
-  setTimeout(() => {
-      document.querySelectorAll(".iti__country-name").forEach(el => {
-        el.textContent = el.textContent.replace(/\s*\(.*?\)/, "");
-      });
-  }, 500);
+  const itiInstance = $input.intlTelInput("getInstance");
 
     $(".form").on("submit", async function (e) {
         e.preventDefault();
@@ -60,8 +56,7 @@ $(document).ready(function () {
           isValid = false;
         }
 
-          const iti = $input.intlTelInput("getInstance");
-          const isPhoneValid = iti.isValidNumber();
+          const isPhoneValid = itiInstance.isValidNumber();
           if (!isPhoneValid) {
             form.find(".error-phone").text("Номер телефону невірний!");
             form.find(".hero-input-phone").addClass("error");
