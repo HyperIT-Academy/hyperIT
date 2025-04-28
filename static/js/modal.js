@@ -1,29 +1,4 @@
 $(document).ready(function () {
-  $(".hero-input-phone").each(function() {
-  const $input = $(this);
-
-  // ініціалізація плагіну intlTelInput
-  const iti = $input.intlTelInput({
-    initialCountry: "auto",
-    locale: "en",
-    localizedCountries: {
-      cg: "Congo - Brazzaville",
-      cd: "Congo - Kinshasa"
-    },
-    nationalMode: true,
-    autoPlaceholder: "polite",
-    formatOnDisplay: false,
-    separateDialCode: false, 
-    geoIpLookup: function (callback) {
-      fetch("https://ipinfo.io/json?token=9f9dee509d49e4")
-        .then(res => res.json())
-        .then(data => callback(data.country))
-        .catch(() => callback("ua"));
-    },
-    utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
-  });
-
-  // Додайте подібну логіку для кожного поля
   $(".form").on("submit", async function (e) {
     e.preventDefault();
     
@@ -45,8 +20,7 @@ $(document).ready(function () {
     }
 
     // Перевірка валідності номера телефону
-    const isPhoneValid = iti[0].validity.valid;
-    if (!isPhoneValid) {
+    if (/^\+?[1-9]\d{1,14}$/.test(phone)) {
       form.find(".error-phone").text("Номер телефону невірний!");
       form.find(".hero-input-phone").addClass("error");
       isValid = false;
@@ -95,8 +69,7 @@ $(document).ready(function () {
       }
     }
   });
-});
-
+  
     $(".form input").on("input", function () {
         const $input = $(this);
         const value = $input.val().trim();
@@ -107,7 +80,7 @@ $(document).ready(function () {
           $(".error-name").text("");
         }
       
-        if (name === "phone" && /^\+?[0-9\s\-\(\)]{10,20}$/.test(value)) {
+        if (name === "phone" && /^\+?[1-9]\d{1,14}$/.test(value)) {
           $input.removeClass("error");
           $(".error-phone").text("");
         }
