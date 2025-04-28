@@ -59,7 +59,7 @@ $(document).ready(function () {
           };
         
           try {
-            const response = await fetch("https://hyperit.onrender.com/api/send", {
+            const response = await fetch("https://hyperi.onrender.com/api/send", {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify(data),
