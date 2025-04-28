@@ -55,10 +55,14 @@ app.post('/api/send', async (req, res) => {
 
     res.json({ success: true, data: dealResponse.data });
 
-  } catch (error) {
-    console.error('Помилка при надсиланні в CRM:', error.response?.data || error.message);
-    res.status(500).json({ success: false, message: 'Помилка при надсиланні в CRM' });
+  } } catch (error) {
+  if (error.response) {
+    console.error('Повна відповідь помилки CRM:', JSON.stringify(error.response.data, null, 2));
+  } else {
+    console.error('Unknown Error:', error.message);
   }
+  res.status(500).json({ success: false, message: 'Помилка при надсиланні в CRM' });
+}
 });
 
 const PORT = process.env.PORT || 3000;
