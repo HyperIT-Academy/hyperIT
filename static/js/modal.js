@@ -125,6 +125,10 @@ document.addEventListener("DOMContentLoaded", function () {
         if (response.ok) {
           alert("Заявка надіслана успішно!");
           form.reset();
+          const backdrop = document.querySelector(".backdrop");
+          if (!backdrop.classList.contains("is-hidden")) {
+            backdrop.classList.add("is-hidden");
+          }
         } else {
           alert("Ваші дані не вдалося зберегти");
           const botLink = `https://t.me/HyperIT_Academy_bot`;
