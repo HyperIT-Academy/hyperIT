@@ -124,6 +124,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (response.ok) {
           alert("Заявка надіслана успішно!");
+          fbq('track', 'SubmitApplication');
           form.reset();
           const backdrop = document.querySelector(".backdrop");
           if (!backdrop.classList.contains("is-hidden")) {
