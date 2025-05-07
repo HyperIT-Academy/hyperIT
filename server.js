@@ -48,7 +48,7 @@ app.post('/api/send', async (req, res) => {
 🔗 Email: ${email}
 📱 Телефон: ${phone}
 
-🕒<${currentDateTime}>
+🕒 ${currentDateTime}
 `;
 
   try {
@@ -60,47 +60,47 @@ app.post('/api/send', async (req, res) => {
       console.error('Помилка Telegram:', err.message);
     });
     
-    //CRM:Створюємо клієнта
-    const clientResponse = await axios.post('https://api.binotel.com/api/4.0/smartcrm/client-create.json', {
-      "name": name,
-      "assignedToId": 445706,
-      "email": email,
-      "numbers": [phone],
-      "key": SMARTCRM_KEY,
-      "secret": SMARTCRM_SECRET,
-    });
+    // //CRM:Створюємо клієнта
+    // const clientResponse = await axios.post('https://api.binotel.com/api/4.0/smartcrm/client-create.json', {
+    //   "name": name,
+    //   "assignedToId": 445706,
+    //   "email": email,
+    //   "numbers": [phone],
+    //   "key": SMARTCRM_KEY,
+    //   "secret": SMARTCRM_SECRET,
+    // });
 
-    // Перевірка, чи клієнт створений
-    const customerId = clientResponse.data?.result?.id;
+    // // Перевірка, чи клієнт створений
+    // const customerId = clientResponse.data?.result?.id;
 
-    if (!customerId) {
-      console.error('Повна відповідь помилки CRM:', JSON.stringify(clientResponse.data, null, 2));
-      return res.status(500).json({ success: false, message: 'Не вдалося створити клієнта' });
-    }
+    // if (!customerId) {
+    //   console.error('Повна відповідь помилки CRM:', JSON.stringify(clientResponse.data, null, 2));
+    //   return res.status(500).json({ success: false, message: 'Не вдалося створити клієнта' });
+    // }
 
-    console.log('Клієнт створений з ID:', customerId);
+    // console.log('Клієнт створений з ID:', customerId);
 
-    //CRM:Створюємо угоду і прив'язуємо клієнта
-    const dealResponse = await axios.post('https://api.binotel.com/api/4.0/smartcrm/deal-create.json', {
-      name: dealName,
-      key: SMARTCRM_KEY,
-      secret: SMARTCRM_SECRET,
-      pipelineId: 6046,
-      stageId: 42467,
-      customerId: customerId,
-      budget: 0,
-      contacts: [
-        {
-          name: name,
-          phones: [phone],
-          emails: [email],
-        }
-      ]
-    });
+    // //CRM:Створюємо угоду і прив'язуємо клієнта
+    // const dealResponse = await axios.post('https://api.binotel.com/api/4.0/smartcrm/deal-create.json', {
+    //   name: dealName,
+    //   key: SMARTCRM_KEY,
+    //   secret: SMARTCRM_SECRET,
+    //   pipelineId: 6046,
+    //   stageId: 42467,
+    //   customerId: customerId,
+    //   budget: 0,
+    //   contacts: [
+    //     {
+    //       name: name,
+    //       phones: [phone],
+    //       emails: [email],
+    //     }
+    //   ]
+    // });
 
-    console.log('Угода створена:', dealResponse.data);
+    // console.log('Угода створена:', dealResponse.data);
 
-    res.json({ success: true, data: dealResponse.data });
+    // res.json({ success: true, data: dealResponse.data });
 
   } catch (error) {
     if (error.response) {
