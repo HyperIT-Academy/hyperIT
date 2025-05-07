@@ -25,14 +25,42 @@ app.get('/', (req, res) => {
 const SMARTCRM_KEY = process.env.SMARTCRM_KEY;
 const SMARTCRM_SECRET = process.env.SMARTCRM_SECRET;
 
+const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
+const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID;
+
 app.post('/api/send', async (req, res) => {
   const { name, phone, email } = req.body;
 
-  const currentDate = new Date().toLocaleDateString();
-  const dealName = `${name} - Угода від ${currentDate}`;
+  const currentDateTime = new Date().toLocaleString('uk-UA', {
+    timeZone: 'Europe/Kyiv',
+    day: '2-digit',
+    month: '2-digit',
+    year: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit'
+  });
+  const dealName = `${name} - Угода від ${currentDateTime}`;
+
+    const telegramMessage = `
+📩 Нова заявка з Facebook:
+
+👤 Ім'я: ${name}
+🔗 Email: ${email}
+📱 Телефон: ${phone}
+
+🕒<${currentDateTime}>
+`;
 
   try {
-    //Створюємо клієнта
+    // Надсилаємо повідомлення в Telegram
+    axios.post(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+      chat_id: TELEGRAM_CHAT_ID,
+      text: telegramMessage,
+    }).catch(err => {
+      console.error('Помилка Telegram:', err.message);
+    });
+    
+    //CRM:Створюємо клієнта
     const clientResponse = await axios.post('https://api.binotel.com/api/4.0/smartcrm/client-create.json', {
       "name": name,
       "assignedToId": 445706,
@@ -52,7 +80,7 @@ app.post('/api/send', async (req, res) => {
 
     console.log('Клієнт створений з ID:', customerId);
 
-    //Створюємо угоду і прив'язуємо клієнта
+    //CRM:Створюємо угоду і прив'язуємо клієнта
     const dealResponse = await axios.post('https://api.binotel.com/api/4.0/smartcrm/deal-create.json', {
       name: dealName,
       key: SMARTCRM_KEY,
