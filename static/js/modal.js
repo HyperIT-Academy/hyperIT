@@ -69,6 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if(isPhoneValid) {
         const countryData = iti.getSelectedCountryData();
         const countryCode = countryData.dialCode; // Отримуємо код країни
+        let phoneWithCountryCode = phone.trim(); 
     
         if (phone) {
           // Якщо номер телефону не містить коду країни, додаємо його
@@ -79,6 +80,9 @@ document.addEventListener("DOMContentLoaded", function () {
           // Видалення +380 для українських номерів
           if (countryCode === "380" && phoneWithCountryCode.startsWith("+380")) {
             phoneWithCountryCode = phoneWithCountryCode.replace("+38", "");
+            if(phoneWithCountryCode.startsWith("00")) {
+                 phoneWithCountryCode = phoneWithCountryCode.replace(/^00/, "0");
+            }
           }
     
           // Заміна + на 00 для інших країн
