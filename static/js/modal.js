@@ -69,7 +69,6 @@ document.addEventListener("DOMContentLoaded", function () {
     if(isPhoneValid) {
         const countryData = iti.getSelectedCountryData();
         const countryCode = countryData.dialCode; // Отримуємо код країни
-        let phoneWithCountryCode = phone.trim(); 
     
         if (phone) {
           // Якщо номер телефону не містить коду країни, додаємо його
