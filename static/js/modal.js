@@ -71,6 +71,8 @@ document.addEventListener("DOMContentLoaded", function () {
         const countryCode = countryData.dialCode; // Отримуємо код країни
     
         if (phone) {
+          phoneWithCountryCode = phone.replace(/[^\d+]/g, '');
+    
           // Якщо номер телефону не містить коду країни, додаємо його
           if (!phone.startsWith("+")) {
             phoneWithCountryCode = "+" + countryCode + phone;
@@ -87,8 +89,6 @@ document.addEventListener("DOMContentLoaded", function () {
           if (countryCode !== "380" && phoneWithCountryCode.startsWith("+")) {
             phoneWithCountryCode = phoneWithCountryCode.replace("+", "00");
           }
-
-          phoneWithCountryCode = phoneWithCountryCode.replace(/\D/g, "");
         }
 
         console.log("Оброблений номер телефону:", phoneWithCountryCode);
