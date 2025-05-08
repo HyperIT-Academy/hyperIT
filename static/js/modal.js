@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", function () {
       isValid = false;
     }
 
-    Якщо всі перевірки пройдені, відправляємо дані
+    // Якщо всі перевірки пройдені, відправляємо дані
     if (isValid) {
       alert("Зберігаємо ваші дані");
 
