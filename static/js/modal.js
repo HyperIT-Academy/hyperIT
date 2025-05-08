@@ -87,6 +87,8 @@ document.addEventListener("DOMContentLoaded", function () {
           if (countryCode !== "380" && phoneWithCountryCode.startsWith("+")) {
             phoneWithCountryCode = phoneWithCountryCode.replace("+", "00");
           }
+
+          phoneWithCountryCode = phoneWithCountryCode.replace(/\D/g, "");
         }
 
         console.log("Оброблений номер телефону:", phoneWithCountryCode);
