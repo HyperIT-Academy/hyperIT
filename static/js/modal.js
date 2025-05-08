@@ -127,13 +127,13 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         if (response.ok) {
-          // window.location.href = "/thank-you.html";
           fbq('track', 'SubmitApplication');
           form.reset();
           const backdrop = document.querySelector(".backdrop");
           if (!backdrop.classList.contains("is-hidden")) {
             backdrop.classList.add("is-hidden");
           }
+          window.location.href = "/thank-you.html";
         } else {
           alert("Ваші дані не вдалося зберегти");
           const botLink = `https://t.me/HyperIT_Academy_bot`;
