@@ -110,42 +110,42 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Якщо всі перевірки пройдені, відправляємо дані
-    if (isValid) {
-      alert("Зберігаємо ваші дані");
+    // if (isValid) {
+    //   alert("Зберігаємо ваші дані");
 
-      const data = {
-        name: name,
-        phone: phoneWithCountryCode,
-        email: email,
-      };
+    //   const data = {
+    //     name: name,
+    //     phone: phoneWithCountryCode,
+    //     email: email,
+    //   };
 
-      try {
-        const response = await fetch("https://hyperit.onrender.com/api/send", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(data),
-        });
+    //   try {
+    //     const response = await fetch("https://hyperit.onrender.com/api/send", {
+    //       method: "POST",
+    //       headers: { "Content-Type": "application/json" },
+    //       body: JSON.stringify(data),
+    //     });
 
-        if (response.ok) {
-          window.location.href = "/thank-you.html";
-          fbq('track', 'SubmitApplication');
-          form.reset();
-          const backdrop = document.querySelector(".backdrop");
-          if (!backdrop.classList.contains("is-hidden")) {
-            backdrop.classList.add("is-hidden");
-          }
-        } else {
-          alert("Ваші дані не вдалося зберегти");
-          const botLink = `https://t.me/HyperIT_Academy_bot`;
-          window.location.href = botLink;
-        }
-      } catch (error) {
-        console.error(error);
-        alert("Сталася помилка при підключенні до сервера.");
-        const botLink = `https://t.me/HyperIT_Academy_bot`;
-        window.location.href = botLink;
-      }
-    }
+    //     if (response.ok) {
+    //       window.location.href = "/thank-you.html";
+    //       fbq('track', 'SubmitApplication');
+    //       form.reset();
+    //       const backdrop = document.querySelector(".backdrop");
+    //       if (!backdrop.classList.contains("is-hidden")) {
+    //         backdrop.classList.add("is-hidden");
+    //       }
+    //     } else {
+    //       alert("Ваші дані не вдалося зберегти");
+    //       const botLink = `https://t.me/HyperIT_Academy_bot`;
+    //       window.location.href = botLink;
+    //     }
+    //   } catch (error) {
+    //     console.error(error);
+    //     alert("Сталася помилка при підключенні до сервера.");
+    //     const botLink = `https://t.me/HyperIT_Academy_bot`;
+    //     window.location.href = botLink;
+    //   }
+    // }
   });
 });
 
