@@ -127,7 +127,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         if (response.ok) {
-          window.location.href = "/thank-you.html";
+          // window.location.href = "/thank-you.html";
           fbq('track', 'SubmitApplication');
           form.reset();
           const backdrop = document.querySelector(".backdrop");
