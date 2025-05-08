@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
           // Якщо номер телефону не містить коду країни, додаємо його
           if (!phone.startsWith("+")) {
-            phoneWithCountryCode = "+" + countryCode + phone;
+            phoneWithCountryCode = "+" + countryCode + phoneWithCountryCode;
           }
     
           // Видалення +380 для українських номерів
