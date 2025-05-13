@@ -17,7 +17,7 @@
         padding-top: 158px;
         padding-bottom: 81px;
         background-size: 645px 620px, 100% 100%;
-        background-position: top 230px left calc((100vw - 1170px) / 2 + 700px), center;
+        background-position: top 155px left calc((100vw - 1170px) / 2 + 700px), center;
     }
 
     &__title {
@@ -32,7 +32,7 @@
         }
 
         @media screen and (min-width: $bp-desktop) {
-            font-size: 46px;
+            font-size: 42px;
             width: 925px;
         }
     }
