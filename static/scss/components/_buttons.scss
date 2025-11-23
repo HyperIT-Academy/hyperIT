@@ -9,6 +9,7 @@
     font-weight: 500;
     color: var(--color-primary-light);
     transition: all 0.3s;
+    text-decoration: none;
     @media screen and (min-width: $bp-tablet) {
         border-radius: 20px;
     }
