@@ -7,7 +7,6 @@
     <title>HyperIT Academy - Навчальний заклад для дітей та підлітків</title>
     <link rel="stylesheet" href="./static/css/main.min.css">
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@17.0.8/build/css/intlTelInput.css" />
     <!-- Meta Pixel Code -->
     <script>
     !function(f,b,e,v,n,t,s)
@@ -55,42 +54,21 @@
     </header>
     <main>
         <section class="hero">
-            <div class="container">
-                <h1 class="hero__title">Ваша дитина грає в Minecraft?<br>Навчимо її програмувати в грі!</h1>
-                <p class="hero__sub-title">Програмування без нудних лекцій — у знайомому ігровому світі!</p>
-                <p class="hero__free-lesson-text">Перше заняття безкоштовне!</p>
-                <div class="hero-form">
-                    <form class="form" id="hero" novalidate>
-                        <div class="hero-form__all-fields">
-                           <!-- <div class="hero-form__field">
-                                <label class="hero-form__label input-label">Ім'я</label>
-                                <input class="hero-form__input input-field hero-input-name" name="name" type="text" placeholder="Ім'я">
-                                <div class="error error-name"></div>
-                            </div>
-                            <div class="hero-form__field">
-                                <label class="hero-form__label input-label">Контактний телефон</label>
-                                <input class="hero-form__input input-field hero-input-phone" name="phone" type="tel">
-                                <div class="error error-phone"></div>
-                            </div>
-                            <div class="hero-form__field">
-                                <label class="hero-form__label input-label">Email</label>
-                                <input class="hero-form__input input-field hero-input-email" name="email" type="email" placeholder="email@gmail.com">
-                                <div class="error error-email"></div>-->
-                            </div>
-                            <div class="hero-form__field field-checkbox">
-                                <label class="input-label-checkbox">
-                                    <input class="visually-hidden just-validate-success-field hero-input-privacy" type="checkbox" name="agree" checked="checked" value="agree">
-                                    <span class="checkbox"></span>Відправкою даної заявки я підтверджую, що я ознайомлений з 
-                                        <a href="#">Політикою конфіденційності</a>приймаю її умови і згоден з нею, включаючи ті, що стосуються регламентації обробки моїх персональних даних
-                                </label>
-                                <div class="error error-privacy"></div>
-                            </div>
-                             <a class="btn hero-form__button"
-                                 href="https://t.me/HyperIT_Academy_bot"
-                                 target="_blank" rel="noopener">Записатись на безкоштовне заняття</a>
-                        
-                        </div>
-                    </form>
+            <div class="container hero__layout">
+                <div class="hero__content">
+                    <p class="hero__eyebrow">HyperIT Academy</p>
+                    <h1 class="hero__title">Ваша дитина грає в Minecraft?<br>Навчимо її програмувати в грі!</h1>
+                    <p class="hero__sub-title">Програмування без нудних лекцій — у знайомому ігровому світі!</p>
+                    <p class="hero__free-lesson-text">Перше заняття безкоштовне!</p>
+                    <div class="hero__actions">
+                        <a class="btn hero__cta modal-open-js" href="#telegram-modal">Записатись через Telegram</a>
+                        <p class="hero__helper-text">Натисніть, щоб підтвердити умови та перейти до реєстрації в боті.</p>
+                    </div>
+                </div>
+                <div class="hero__visual" aria-hidden="true">
+                    <div class="hero__visual-card">
+                        <img class="hero__image" src="/static/images/hero/hero-boy.webp" alt="Учень, який вивчає програмування в Minecraft">
+                    </div>
                 </div>
             </div>
         </section>
@@ -436,50 +414,32 @@
             </a>
         </div>
     </footer>
-    <div class="backdrop is-hidden">
-        <div class="modal">
-            <button class="modal__close-btn" type="button" aria-label="кнопка закриття модального вікна">
-                <svg height="16" width="16"> 
-                    <use href="/static/images/sprite.svg#icon-close"></use> 
+    <div class="backdrop is-hidden" id="telegram-modal">
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="telegram-modal-title">
+            <button class="modal__close-btn" type="button" aria-label="кнопка закриття модального вікна" data-modal-close>
+                <svg height="16" width="16">
+                    <use href="/static/images/sprite.svg#icon-close"></use>
                 </svg>
             </button>
             <a href="/" class="modal__home-link" aria-label="Посилання на головну сторінку сайту">
                 <img class="modal__logo" width="200" height="110" src="/static/images/logo.png" alt="Логотип сайту">
             </a>
-            <h2 class="modal__title">Залишити заявку</h2>
-            <form class="hero-form form" novalidate>
-                <div class="hero-form__all-fields">
-                    <div class="hero-form__field">
-                        <label class="hero-form__label input-label" for="hero_input_name">Ім'я <span class="modal-star">*</span></label>
-                        <input class="hero-form__input input-field hero-input-name" id="hero_input_name" name="name" type="text" placeholder="Ім'я">
-                        <div class="error error-name"></div>
-                    </div>
-                    <div class="hero-form__field">
-                        <label class="hero-form__label input-label" for="hero_input_phone">Контактний телефон <span class="modal-star">*</span></label>
-                        <input class="hero-form__input input-field hero-input-phone" id="hero_input_phone" name="phone" type="tel">
-                        <div class="error error-phone"></div>
-                    </div>
-                    <div class="hero-form__field">
-                        <label class="hero-form__label input-label" for="hero_input_email">Email <span class="modal-star">*</span></label>
-                        <input class="hero-form__input input-field hero-input-email" id="hero_input_email" name="email" type="email" placeholder="email@gmail.com">
-                        <div class="error error-email"></div>
-                    </div>
-                    <div class="hero-form__field field-checkbox">
-                        <label class="input-label-checkbox">
-                            <input class="visually-hidden just-validate-success-field hero-input-privacy" id="hero_input_privacy" type="checkbox" name="agree" checked="checked" value="agree">
-                            <span class="checkbox"></span>Відправкою даної заявки я підтверджую, що я ознайомлений з 
-                                <a href="/privacy.html" target="_blank">Політикою конфіденційності</a>приймаю її умови і згоден з нею, включаючи ті, що стосуються регламентації обробки моїх персональних даних
-                        </label>
-                        <div class="error error-privacy"></div>
-                    </div>
-                    <button class="btn hero-form__button" type="submit">Зареєструватися</button>
+            <div class="modal__content">
+                <h2 class="modal__title" id="telegram-modal-title">Реєстрація через Telegram</h2>
+                <p class="modal__description">Відправкою даної заявки я підтверджую, що я ознайомлений з <a href="/privacy.html" target="_blank" rel="noopener">Політикою конфіденційності</a>, приймаю її умови і згоден з нею, включаючи ті, що стосуються регламентації обробки моїх персональних даних.</p>
+                <div class="modal__actions">
+                    <a class="btn modal__telegram" href="https://t.me/HyperIT_Academy_bot" target="_blank" rel="noopener">
+                        <svg height="24" width="24" aria-hidden="true">
+                            <use href="/static/images/sprite.svg#icon-telegram"></use>
+                        </svg>
+                        <span>Зареєструватися за допомогою Telegram</span>
+                    </a>
+                    <button class="modal__secondary-btn" type="button" data-modal-close>Закрити</button>
                 </div>
-            </form>
+            </div>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"></script>
     <script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="./static/js/app.js"></script>
     <script src="./static/js/modal.js"></script>
